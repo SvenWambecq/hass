@@ -43,4 +43,6 @@ The basic idea is as follows:
 2. HA listens by default to port 8123. Opening this port, without encryption is not wise, but also not possible within the proximus network. A lot of ports are blocked by default by proximus.
 3. We will therefore access HA using https from the external world. Accesses are then made over port 443, and we have to configure the modem (and also the deco on the internal network) to forward port 443 to the raspberry pi.
 4. To use https, we need to setup a certificate. We did this using the explanation at https://community.home-assistant.io/t/installing-tls-ssl-using-lets-encrypt/196975.
-5. 
+
+### Create service
+https://community.home-assistant.io/t/autostart-using-systemd/199497
