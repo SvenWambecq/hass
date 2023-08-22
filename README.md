@@ -34,7 +34,7 @@ After installing HASS, it can be started as described in the above webpage and y
 
 I configured the raspberry pi to get a fixed internal address on our LAN. (192.168.68.102). 
 
-#### Exteranal access
+#### External access
 
 To access HA from the outside is a bit more difficult to setup. 
 The basic idea is as follows: 
