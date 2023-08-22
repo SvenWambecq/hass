@@ -21,5 +21,26 @@ More information can be found at the following locations:
 
 I struggled with the SSL module. The library was not installed on my RPi, but the python build did not complain about this. Python was built correctly, but I could not install packages using pip because I didn't have the SSL library.
 
+### Install HASS
 
+Follow the steps as described in 
+- https://www.home-assistant.io/installation/raspberrypi#install-home-assistant-core
 
+After installing HASS, it can be started as described in the above webpage and you can browse to the interface using a webbrowser. 
+
+### Interfacing
+
+#### Internal access
+
+I configured the raspberry pi to get a fixed internal address on our LAN. (192.168.68.102). 
+
+#### Exteranal access
+
+To access HA from the outside is a bit more difficult to setup. 
+The basic idea is as follows: 
+
+1. We will use a DynDNS such that the real IP address can be accessed using a logical IP address. To do this, we use DuckDNS.org. A domain was requested for this (sveneniris.duckdns.org).
+2. HA listens by default to port 8123. Opening this port, without encryption is not wise, but also not possible within the proximus network. A lot of ports are blocked by default by proximus.
+3. We will therefore access HA using https from the external world. Accesses are then made over port 443, and we have to configure the modem (and also the deco on the internal network) to forward port 443 to the raspberry pi.
+4. To use https, we need to setup a certificate. We did this using the explanation at https://community.home-assistant.io/t/installing-tls-ssl-using-lets-encrypt/196975.
+5. 
