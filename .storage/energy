@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "energy",
+  "data": {
+    "energy_sources": [
+      {
+        "type": "solar",
+        "stat_energy_from": "sensor.today_s_pv_generation",
+        "config_entry_solar_forecast": null
+      },
+      {
+        "type": "grid",
+        "flow_from": [
+          {
+            "stat_energy_from": "sensor.buy_kwh",
+            "stat_cost": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          }
+        ],
+        "flow_to": [
+          {
+            "stat_energy_to": "sensor.sell_kwh",
+            "stat_compensation": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          }
+        ],
+        "cost_adjustment_day": 0.0
+      },
+      {
+        "type": "battery",
+        "stat_energy_from": "sensor.battery_out_kwh",
+        "stat_energy_to": "sensor.battery_in_kwh"
+      }
+    ],
+    "device_consumption": []
+  }
+}

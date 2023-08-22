@@ -1,0 +1,132 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+recorder:
+  commit_interval: 30
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+homeassistant:
+  external_url: https://sveneniris.duckdns.org
+  latitude: 50.89233978360891
+  longitude: 4.751319141342004
+
+duckdns:
+  domain: sveneniris
+  access_token: 0e26191e-5e43-4beb-8024-9fde88c1d9d1
+
+http:
+  # For extra security set this to only accept connections on localhost if NGINX is on the same machine
+  # Uncommenting this will mean that you can only reach Home Assistant using the proxy, not directly via IP from other clients.
+  # server_host: 127.0.0.1
+  use_x_forwarded_for: true
+  # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
+  # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
+  trusted_proxies: 127.0.0.1
+# http:
+#   ssl_certificate: /etc/letsencrypt/live/sveneniris.duckdns.org/fullchain.pem
+#   ssl_key: /etc/letsencrypt/live/sveneniris.duckdns.org/privkey.pem
+
+
+template:
+  - sensor:
+      - name: "Battery Power In"
+        unique_id: battery_power_in
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >
+          {% set power = states('sensor.battery_power')|float / 1000 %}
+          {% if power < 0 %}
+            {{ power|abs }}
+          {% else %}
+            0
+          {% endif %}
+        availability: true
+
+      - name: "Battery Power Out"
+        unit_of_measurement: "kW"
+        unique_id: battery_power_out
+        device_class: power
+        state_class: measurement
+        state: >
+          {% set power = states('sensor.battery_power')|float / 1000 %}
+          {% if power >= 0 %}
+            {{ power }}
+          {% else %}
+            0
+          {% endif %}
+        availability: true
+
+      - name: "Grid Power In"
+        unique_id: grid_power_in
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >
+          {% set power = states('sensor.filtered_grid_power')|float / 1000 %}
+          {% if power < 0 %}
+            {{ power|abs }}
+          {% else %}
+            0
+          {% endif %}
+        availability: true
+
+      - name: "Grid Power Out"
+        unique_id: grid_power_out
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >
+          {% set power = states('sensor.filtered_grid_power')|float / 1000 %}
+          {% if power >= 0 %}
+            {{ power }}
+          {% else %}
+            0
+          {% endif %}
+        availability: true
+
+sensor:
+  - platform: filter
+    name: "filtered grid_power"
+    unique_id: filtered_grid_power
+    entity_id: sensor.on_grid_export_power
+    filters:
+      - filter: time_simple_moving_average
+        window_size: "00:01"
+        precision: 2
+  - name: "Battery In [kWh]"
+    platform: integration
+    source: sensor.battery_power_in
+    round: 2
+    method: left
+
+  - name: "Battery Out [kWh]"
+    platform: integration
+    source: sensor.battery_power_out
+    round: 2
+    method: left
+
+  - name: "In-house consumption [kWh]"
+    platform: integration
+    source: sensor.house_consumption
+    round: 2
+    method: left
+
+  - name: "Sell [kWh]"
+    platform: integration
+    source: sensor.grid_power_out
+    round: 2
+    method: left
+
+  - name: "Buy [kWh]"
+    platform: integration
+    source: sensor.grid_power_in
+    round: 2
+    method: left

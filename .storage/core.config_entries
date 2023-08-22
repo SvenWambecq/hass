@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {
+        "entry_id": "2cd22774e949538d4dff195feeeb0163",
+        "version": 1,
+        "domain": "bluetooth",
+        "title": "B8:27:EB:FA:72:F6",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "integration_discovery",
+        "unique_id": "B8:27:EB:FA:72:F6",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "348242d18d9f69c61650039f9b627178",
+        "version": 1,
+        "domain": "upnp",
+        "title": "Sagem Internet Gateway Device",
+        "data": {
+          "udn": "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e",
+          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+          "original_udn": "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e",
+          "location": "http://192.168.1.1:49152/62714942/gatedesc0b.xml",
+          "mac_address": null,
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ssdp",
+        "unique_id": "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": "user"
+      },
+      {
+        "entry_id": "d1ea2137fdf2a6c968d0099d6238ee66",
+        "version": 1,
+        "domain": "goodwe",
+        "title": "GoodWe",
+        "data": {
+          "host": "192.168.68.110",
+          "model_family": "ES"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "95048ESU226W0674",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "3bed8e57e36a2670e0f7e7c64ee64213",
+        "version": 1,
+        "domain": "cpuspeed",
+        "title": "CPU Speed",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "cpuspeed",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "2a9e4fb670334404928a0432398a8e6b",
+        "version": 1,
+        "domain": "rpi_power",
+        "title": "Raspberry Pi Power Supply Checker",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "rpi_power",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "59d817411aae257f14b9cf9ae2998464",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "LG-M700",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.8.2-full (10992)",
+          "device_name": "LG-M700",
+          "manufacturer": "LGE",
+          "model": "LG-M700",
+          "os_name": "Android",
+          "os_version": "27",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "ceIYzR7ARbSjI4XmkwSc0g:APA91bGl88QQMCJqcrAkJ4-LRarT-0wSCsntwIjP0I6i13xC13xYoWccyvKs7HRVd2RO_QuqLjQ8a5Ma9w4Zjg92KOVH1nPnTs9AKUkkWEpdTJxoVmIYnvGkLDwS5_LQ9kmTTRlxTV-y"
+          },
+          "device_id": "69198fcca6838c39",
+          "webhook_id": "0195f31bd21b117d813a96bc4bb3a851fa154fe3eaedd4655918cb31a074e2c7",
+          "user_id": "579c1a53239a4d8eb7452f3958326eca"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-69198fcca6838c39",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "0314e844ab45c23d012ed7e199d20b57",
+        "version": 1,
+        "domain": "androidtv_remote",
+        "title": "Huiskamer",
+        "data": {
+          "host": "192.168.68.104",
+          "name": "Huiskamer"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "bc:df:58:2f:13:23",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "ce64b3103d75764c3b14448ed2390367",
+        "version": 1,
+        "domain": "integration",
+        "title": "Verbruik",
+        "data": {},
+        "options": {
+          "name": "Verbruik",
+          "source": "sensor.house_consumption",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "95b9263131c55b4c9a1d90684bab7e22",
+        "version": 1,
+        "domain": "sun",
+        "title": "Sun",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "b84287ead3f051a6ef446475a6d55838",
+        "version": 1,
+        "domain": "upnp",
+        "title": "M4R",
+        "data": {
+          "udn": "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd",
+          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+          "original_udn": "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd",
+          "mac_address": "d8:0d:17:0b:d4:04",
+          "host": "192.168.68.1",
+          "location": "http://[::da0d:17ff:fe0b:d404]:1900/rootDesc.xml"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "c38ea3fd5642d4c4a2ec44f440348e6f",
+        "version": 1,
+        "domain": "integration",
+        "title": "Net Verbruik",
+        "data": {},
+        "options": {
+          "name": "Net Verbruik",
+          "source": "sensor.on_grid_power",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "k",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "230149c5ad12fdf76d139f18ee6bdfb6",
+        "version": 1,
+        "domain": "integration",
+        "title": "Net verbruik",
+        "data": {},
+        "options": {
+          "name": "Net verbruik",
+          "source": "sensor.on_grid_power",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "7bb9c6d2f8c18d00d58558dfe4e78794",
+        "version": 1,
+        "domain": "integration",
+        "title": "Export power ",
+        "data": {},
+        "options": {
+          "name": "Export power ",
+          "source": "sensor.on_grid_export_power",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8a45f4a7b3fbc841cd31441f5b1701e9",
+        "version": 1,
+        "domain": "ipp",
+        "title": "EPSON ET-3700 Series",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "583445443031393296",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "fd78729f7eef9ba3512e3a14cb796a5f",
+        "version": 1,
+        "domain": "ibeacon",
+        "title": "ibeacon",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "3b5f19301d9bcdd125c758a23e1599d8",
+        "version": 1,
+        "domain": "ipp",
+        "title": "EPSON ET-3700 Series",
+        "data": {
+          "host": "192.168.68.112",
+          "name": "EPSON ET-3700 Series"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "cfe92100-67c4-11d4-a45f-381a52488272",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "820f4ff475ad1ddf49ded38c5bec4f52",
+        "version": 1,
+        "domain": "integration",
+        "title": "Energy Out ",
+        "data": {},
+        "options": {
+          "name": "Energy Out ",
+          "source": "sensor.battery_power_out",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "6321a8b457d5f02edd2792ed1ce08b46",
+        "version": 1,
+        "domain": "integration",
+        "title": "Energy In",
+        "data": {},
+        "options": {
+          "name": "Energy In",
+          "source": "sensor.battery_power_in",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "b73182c4e75f19e8540d02f1a30b7e95",
+        "version": 1,
+        "domain": "integration",
+        "title": "Battery Energy in",
+        "data": {},
+        "options": {
+          "name": "Battery Energy in",
+          "source": "sensor.battery_power_in",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "0f2c79c3f4b08df57f2e6f8f2bdab891",
+        "version": 1,
+        "domain": "integration",
+        "title": "Battery Energy Out",
+        "data": {},
+        "options": {
+          "name": "Battery Energy Out",
+          "source": "sensor.battery_power_out",
+          "method": "trapezoidal",
+          "round": 2.0,
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "9c0148e01ec2f1fc1539f40401b0b130",
+        "version": 1,
+        "domain": "cast",
+        "title": "cast",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "cast",
+        "disabled_by": null
+      }
+    ]
+  }
+}

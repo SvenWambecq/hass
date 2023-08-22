@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_test",
+  "data": {
+    "config": {
+      "title": "Home",
+      "resources": [
+        {
+          "url": "/local/power-flow-card.js",
+          "type": "module"
+        }
+      ],
+      "views": [
+        {
+          "path": "default_view",
+          "title": "Home",
+          "subview": false,
+          "type": "sidebar",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:power-flow-card",
+              "watt_threshold": 10000,
+              "inverted_entities": "grid",
+              "entities": {
+                "battery": "sensor.battery_power",
+                "battery_charge": "sensor.battery_state_of_charge",
+                "solar": "sensor.pv_power",
+                "grid": "sensor.on_grid_export_power"
+              }
+            },
+            {
+              "type": "custom:plotly-graph",
+              "entities": [
+                {
+                  "entity": "sensor.pv_power",
+                  "filters": [
+                    {
+                      "resample": "1m"
+                    },
+                    {
+                      "sliding_window_moving_average": [
+                        {
+                          "window_size": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "entity": "sensor.battery_power",
+                  "filters": [
+                    {
+                      "resample": "1m"
+                    },
+                    {
+                      "sliding_window_moving_average": [
+                        {
+                          "window_size": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "entity": "sensor.on_grid_export_power",
+                  "filters": [
+                    {
+                      "resample": "1m"
+                    },
+                    {
+                      "sliding_window_moving_average": [
+                        {
+                          "window_size": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "entity": "sensor.house_consumption",
+                  "filters": [
+                    {
+                      "resample": "1m"
+                    },
+                    {
+                      "sliding_window_moving_average": [
+                        {
+                          "window_size": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "entity": "sensor.battery_state_of_charge",
+                  "filters": [
+                    {
+                      "resample": "5m"
+                    },
+                    {
+                      "sliding_window_moving_average": [
+                        {
+                          "window_size": 10
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "hours_to_show": 24,
+              "refresh_interval": 10,
+              "title": "Power",
+              "layout": {
+                "xaxis": {
+                  "rangeselector": {
+                    "y": 1.2,
+                    "buttons": [
+                      {
+                        "count": 6,
+                        "step": "hour"
+                      },
+                      {
+                        "count": 12,
+                        "step": "hour"
+                      },
+                      {
+                        "count": 1,
+                        "step": "day"
+                      },
+                      {
+                        "count": 2,
+                        "step": "day"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": "energy-date-selection"
+            },
+            {
+              "type": "energy-distribution"
+            },
+            {
+              "type": "energy-usage-graph"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "assist_pipeline.pipelines",
+  "data": {
+    "items": [
+      {
+        "conversation_engine": "homeassistant",
+        "conversation_language": "nl",
+        "id": "01h5zj1j4r7rrj06cn1waj9h7w",
+        "language": "nl",
+        "name": "Home Assistant",
+        "stt_engine": null,
+        "stt_language": null,
+        "tts_engine": null,
+        "tts_language": null,
+        "tts_voice": null
+      }
+    ],
+    "preferred_item": "01h5zj1j4r7rrj06cn1waj9h7w"
+  }
+}

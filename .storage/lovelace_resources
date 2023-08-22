@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "dcf3a68799684bb098247813af847416",
+        "url": "/local/power-flow-card.js",
+        "type": "module"
+      },
+      {
+        "id": "6e91d3b2dbf445eebaae4ba906c3b429",
+        "url": "/local/plotly-graph-card.js",
+        "type": "module"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "sven",
+        "name": "sven",
+        "user_id": "579c1a53239a4d8eb7452f3958326eca",
+        "device_trackers": [
+          "device_tracker.lg_m700"
+        ]
+      }
+    ]
+  }
+}
