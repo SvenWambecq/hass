@@ -44,5 +44,15 @@ The basic idea is as follows:
 3. We will therefore access HA using https from the external world. Accesses are then made over port 443, and we have to configure the modem (and also the deco on the internal network) to forward port 443 to the raspberry pi.
 4. To use https, we need to setup a certificate. We did this using the explanation at https://community.home-assistant.io/t/installing-tls-ssl-using-lets-encrypt/196975.
 
+##### Renew certificate
+
+1. To check until when it is valid: 
+   ```ssl-cert-check -b -c /etc/letsencrypt/live/sveneniris.duckdns.org/cert.pem ```
+2. Update certificate:
+   ```sudo systemctl stop nginx
+      sudo certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
+      sudo systemctl start nginx
+  ```
+
 ### Create service
 https://community.home-assistant.io/t/autostart-using-systemd/199497
