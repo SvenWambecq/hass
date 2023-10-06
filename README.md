@@ -47,12 +47,14 @@ The basic idea is as follows:
 ##### Renew certificate
 
 1. To check until when it is valid: 
-   ```ssl-cert-check -b -c /etc/letsencrypt/live/sveneniris.duckdns.org/cert.pem ```
-2. Update certificate:
+   ```
+      ssl-cert-check -b -c /etc/letsencrypt/live/sveneniris.duckdns.org/cert.pem
+   ```
+3. Update certificate:
    ```sudo systemctl stop nginx
       sudo certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
       sudo systemctl start nginx
-  ```
+   ```
 
 ### Create service
 https://community.home-assistant.io/t/autostart-using-systemd/199497
