@@ -50,7 +50,8 @@ The basic idea is as follows:
    ```
       ssl-cert-check -b -c /etc/letsencrypt/live/sveneniris.duckdns.org/cert.pem
    ```
-3. Update certificate:
+
+2. Update certificate:
    ```sudo systemctl stop nginx
       sudo certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
       sudo systemctl start nginx
