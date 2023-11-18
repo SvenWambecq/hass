@@ -59,3 +59,7 @@ The basic idea is as follows:
 
 ### Create service
 https://community.home-assistant.io/t/autostart-using-systemd/199497
+
+### App
+
+https://companion.home-assistant.io/docs/troubleshooting/networking/
