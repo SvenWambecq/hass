@@ -16,7 +16,7 @@
             "B8:27:EB:FA:72:F6"
           ]
         ],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": "usb:v1D6Bp0246d0537",
         "id": "0667c86339207b3200f280c6e156e752",
@@ -46,16 +46,16 @@
         "id": "360a288b48522e9b58f2725ee902a5a6",
         "identifiers": [
           [
-            "upnp_host",
-            "192.168.1.1"
-          ],
-          [
             "upnp",
             "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
           ],
           [
             "upnp_serial_number",
             "000"
+          ],
+          [
+            "upnp_host",
+            "192.168.1.1"
           ]
         ],
         "manufacturer": "Sagemcom",
@@ -68,11 +68,11 @@
       {
         "area_id": "thuis",
         "config_entries": [
-          "d1ea2137fdf2a6c968d0099d6238ee66",
           "7bb9c6d2f8c18d00d58558dfe4e78794",
+          "c38ea3fd5642d4c4a2ec44f440348e6f",
+          "d1ea2137fdf2a6c968d0099d6238ee66",
           "230149c5ad12fdf76d139f18ee6bdfb6",
-          "ce64b3103d75764c3b14448ed2390367",
-          "c38ea3fd5642d4c4a2ec44f440348e6f"
+          "ce64b3103d75764c3b14448ed2390367"
         ],
         "configuration_url": "https://www.semsportal.com",
         "connections": [],
@@ -164,62 +164,130 @@
         "name": "Sun",
         "sw_version": null,
         "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "30a1baa458ae3106354508597f856d15"
+        ],
+        "configuration_url": "https://forecast.solar",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "db6fc86d23cdc0c666112e7c3f4e48bb",
+        "identifiers": [
+          [
+            "forecast_solar",
+            "30a1baa458ae3106354508597f856d15"
+          ]
+        ],
+        "manufacturer": "Forecast.Solar",
+        "model": "public",
+        "name_by_user": null,
+        "name": "Solar production forecast",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "087eb9e08eade480af88722bc8b17123"
+        ],
+        "configuration_url": "https://forecast.solar",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "e59c14b04921c4e8ed41352ed3c60d78",
+        "identifiers": [
+          [
+            "forecast_solar",
+            "087eb9e08eade480af88722bc8b17123"
+          ]
+        ],
+        "manufacturer": "Forecast.Solar",
+        "model": "public",
+        "name_by_user": null,
+        "name": "Solar production forecast",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "thuis",
+        "config_entries": [
+          "1781d396437a6062b523acf3196cb864"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": "config_entry",
+        "entry_type": null,
+        "hw_version": null,
+        "id": "ca0d52e00beb57a9364a5654e9923857",
+        "identifiers": [
+          [
+            "dsmr",
+            "3153414731313030383432373431"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Electricity Meter",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "thuis",
+        "config_entries": [
+          "1781d396437a6062b523acf3196cb864",
+          "edd626a2c5d663671cc7b78d65dd5874"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "a73f0f56926d4310e46f71a8a9fdb179",
+        "identifiers": [
+          [
+            "dsmr",
+            "1781d396437a6062b523acf3196cb864"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Gas Meter",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "078a443ecaa4b2acff7760e1bedc13ef"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "7177bc2f67195b606ac5d077382f8c4a",
+        "identifiers": [
+          [
+            "mobile_app",
+            "b51c0114fa8ca803"
+          ]
+        ],
+        "manufacturer": "Fairphone",
+        "model": "FP4",
+        "name_by_user": null,
+        "name": "FP4",
+        "sw_version": "33",
+        "via_device_id": null
       }
     ],
     "deleted_devices": [
-      {
-        "config_entries": [],
-        "connections": [
-          [
-            "mac",
-            "bc:df:58:2f:13:23"
-          ]
-        ],
-        "identifiers": [
-          [
-            "androidtv_remote",
-            "bc:df:58:2f:13:23"
-          ]
-        ],
-        "id": "66be2c66bb13f2efab230c3d74f80c94",
-        "orphaned_timestamp": 1690661005.1712198
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "easyenergy",
-            "0731ad8f8a793f85c9a4b81ee60b1f9f_today_gas"
-          ]
-        ],
-        "id": "276bf75e6b40c693cb5a34e383928ffa",
-        "orphaned_timestamp": 1690661552.2840807
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "easyenergy",
-            "0731ad8f8a793f85c9a4b81ee60b1f9f_today_energy_usage"
-          ]
-        ],
-        "id": "116dbcb76210c01e52c86252c1d6c19b",
-        "orphaned_timestamp": 1690661552.2840807
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "easyenergy",
-            "0731ad8f8a793f85c9a4b81ee60b1f9f_today_energy_return"
-          ]
-        ],
-        "id": "0bf52918e162b17d1fa8e2789b6d8eda",
-        "orphaned_timestamp": 1690661552.2840807
-      },
       {
         "config_entries": [
           "f5ba3bb4e5df9ce416f08c0958e582b7"
@@ -233,83 +301,6 @@
         ],
         "id": "09b70e81f1f9c141e7f0f18e8595f6e2",
         "orphaned_timestamp": null
-      },
-      {
-        "config_entries": [],
-        "connections": [
-          [
-            "mac",
-            "d8:0d:17:0b:d4:04"
-          ],
-          [
-            "upnp",
-            "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd"
-          ]
-        ],
-        "identifiers": [
-          [
-            "upnp",
-            "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
-          ],
-          [
-            "upnp_host",
-            "192.168.68.1"
-          ],
-          [
-            "upnp_serial_number",
-            "00000000"
-          ]
-        ],
-        "id": "6e5073cf9bf24fe2d5f5081e32dd5503",
-        "orphaned_timestamp": 1692215332.4517288
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "github",
-            "SvenWambecq/sunfish"
-          ]
-        ],
-        "id": "2f09a5445b100e4035a3ca4ca7d63f4c",
-        "orphaned_timestamp": 1692215372.4730828
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "forecast_solar",
-            "c4fd891f0e51ef0e48f4deda50340588"
-          ]
-        ],
-        "id": "8f10266ac8fed8a030e1a9b79cc89a94",
-        "orphaned_timestamp": 1692215394.9478514
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "ipp",
-            "cfe92100-67c4-11d4-a45f-381a52488272"
-          ]
-        ],
-        "id": "4f5bfafb770bf1a3405ad5635c485434",
-        "orphaned_timestamp": 1692215406.6623957
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "sun",
-            "8dc69b89c5d4305dca57e34cac1cb017"
-          ]
-        ],
-        "id": "a772cdf4e322358820ef0aa1f5dc40c1",
-        "orphaned_timestamp": 1692215434.2654245
       }
     ]
   }

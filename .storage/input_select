@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "batterij_mode",
+        "name": "Batterij Mode",
+        "icon": "mdi:battery-charging",
+        "options": [
+          "Laden",
+          "Normaal"
+        ]
+      },
+      {
+        "id": "lader",
+        "name": "Lader",
+        "icon": "mdi:battery-charging-30",
+        "options": [
+          "Laden",
+          "Normaal"
+        ]
+      }
+    ]
+  }
+}

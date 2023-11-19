@@ -13,6 +13,26 @@
         "id": "6e91d3b2dbf445eebaae4ba906c3b429",
         "url": "/local/plotly-graph-card.js",
         "type": "module"
+      },
+      {
+        "id": "25746a2c876b4687bb844b9edde166c9",
+        "url": "/local/apexcharts-card.js",
+        "type": "module"
+      },
+      {
+        "id": "6307b7893d0248f5918ec8eb40dbe825",
+        "url": "/local/button-card.js",
+        "type": "module"
+      },
+      {
+        "id": "2808837785cf468db8f8589e852cd970",
+        "url": "/local/slider-entity-row.js",
+        "type": "module"
+      },
+      {
+        "id": "a2eb07f710d04b15b8f6ceac1873ae75",
+        "url": "/local/mini-graph-card-bundle.js",
+        "type": "module"
       }
     ]
   }

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "timer",
+  "data": {
+    "items": [
+      {
+        "id": "timer",
+        "icon": "mdi:av-timer",
+        "name": "timer",
+        "restore": true,
+        "duration": "0:00:00"
+      }
+    ]
+  }
+}

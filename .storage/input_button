@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_button",
+  "data": {
+    "items": [
+      {
+        "id": "battery_mode_select",
+        "name": "battery mode select",
+        "icon": "mdi:battery"
+      }
+    ]
+  }
+}

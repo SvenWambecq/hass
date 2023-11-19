@@ -1,0 +1,6 @@
+{
+  "name": "GoodWe Inverter (experimental)",
+  "country": "SK",
+  "domains": ["button", "number", "select", "sensor"],
+  "homeassistant": "2023.10.0"
+}

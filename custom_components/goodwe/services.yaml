@@ -1,0 +1,88 @@
+get_parameter:
+  name: Get inverter configuration parameter
+  description: Read inverter configuration parameter and store it in helper entity
+  fields:
+    device_id:
+      name: Inverter device
+      description: ID of the inverter device
+      required: true
+      selector:
+        device:
+          integration: goodwe
+    parameter:
+      name: Parameter
+      description: Name of the inverter parameter
+      required: true
+      selector:
+        text:
+      example: "battery_charge_current"
+    entity_id:
+      name: Helper entity
+      description: Entity where to store the parameter value
+      required: true
+      selector:
+        entity:
+          domain:
+            - input_number
+            - input_text
+set_parameter:
+  name: Set inverter configuration parameter - EXPERIMENTAL
+  description: BEWARE !!! Improper use may cause damage !
+  fields:
+    device_id:
+      name: Inverter device
+      description: ID of the inverter device
+      required: true
+      selector:
+        device:
+          integration: goodwe
+    parameter:
+      name: Parameter
+      description: Name of the inverter parameter
+      required: true
+      selector:
+        text:
+      example: "battery_charge_current"
+    value:
+      name: Value
+      description: Value of the parameter to set
+      example: "20"
+      required: true
+      selector:
+        object:
+
+load_battery:
+  name: Load battery
+  description: Load battery
+  fields:
+    device_id:
+      name: Inverter device
+      description: ID of the inverter device
+      required: true
+      selector:
+        device:
+          integration: goodwe
+    power:
+      name: power
+      description: Power
+      required: true
+      selector:
+        object:
+    soc:
+      name: soc
+      description: SoC
+      required: true
+      selector:
+        object:
+
+general_mode:
+  name: General mode
+  description: General Mode
+  fields:
+    device_id:
+      name: Inverter device
+      description: ID of the inverter device
+      required: true
+      selector:
+        device:
+          integration: goodwe

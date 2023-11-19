@@ -9,7 +9,8 @@
         "name": "sven",
         "user_id": "579c1a53239a4d8eb7452f3958326eca",
         "device_trackers": [
-          "device_tracker.lg_m700"
+          "device_tracker.lg_m700",
+          "device_tracker.fp4"
         ]
       }
     ]

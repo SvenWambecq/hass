@@ -5,15 +5,34 @@
   "data": {
     "energy_sources": [
       {
-        "type": "solar",
-        "stat_energy_from": "sensor.today_s_pv_generation",
-        "config_entry_solar_forecast": null
-      },
-      {
         "type": "grid",
         "flow_from": [
           {
+            "stat_energy_from": "sensor.electricity_meter_energieverbruik_tarief_1",
+            "stat_cost": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.electricity_meter_energieverbruik_tarief_2",
+            "stat_cost": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
             "stat_energy_from": "sensor.buy_kwh",
+            "stat_cost": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.electricity_used_tariff_1",
+            "stat_cost": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.electricity_used_tariff_2",
             "stat_cost": null,
             "entity_energy_price": null,
             "number_energy_price": null
@@ -25,6 +44,30 @@
             "stat_compensation": null,
             "entity_energy_price": null,
             "number_energy_price": null
+          },
+          {
+            "stat_energy_to": "sensor.electricity_meter_energieproductie_tarief_1",
+            "stat_compensation": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_to": "sensor.electricity_meter_energieproductie_tarief_2",
+            "stat_compensation": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_to": "sensor.electricity_delivered_tariff_1",
+            "stat_compensation": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_to": "sensor.electricity_delivered_tariff_2",
+            "stat_compensation": null,
+            "entity_energy_price": null,
+            "number_energy_price": null
           }
         ],
         "cost_adjustment_day": 0.0
@@ -33,6 +76,27 @@
         "type": "battery",
         "stat_energy_from": "sensor.battery_out_kwh",
         "stat_energy_to": "sensor.battery_in_kwh"
+      },
+      {
+        "type": "solar",
+        "stat_energy_from": "sensor.total_pv_generation",
+        "config_entry_solar_forecast": [
+          "30a1baa458ae3106354508597f856d15"
+        ]
+      },
+      {
+        "type": "water",
+        "stat_energy_from": "sensor.water_meter",
+        "stat_cost": null,
+        "entity_energy_price": null,
+        "number_energy_price": null
+      },
+      {
+        "type": "gas",
+        "stat_energy_from": "sensor.gas_verbruik",
+        "stat_cost": null,
+        "entity_energy_price": null,
+        "number_energy_price": null
       }
     ],
     "device_consumption": []

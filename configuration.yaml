@@ -17,9 +17,9 @@ homeassistant:
   latitude: 50.89233978360891
   longitude: 4.751319141342004
 
-duckdns:
-  domain: sveneniris
-  access_token: 0e26191e-5e43-4beb-8024-9fde88c1d9d1
+# duckdns:
+#   domain: sveneniris
+#   access_token: 0e26191e-5e43-4beb-8024-9fde88c1d9d1
 
 http:
   # For extra security set this to only accept connections on localhost if NGINX is on the same machine
@@ -32,7 +32,6 @@ http:
 # http:
 #   ssl_certificate: /etc/letsencrypt/live/sveneniris.duckdns.org/fullchain.pem
 #   ssl_key: /etc/letsencrypt/live/sveneniris.duckdns.org/privkey.pem
-
 
 template:
   - sensor:
@@ -72,7 +71,7 @@ template:
         state: >
           {% set power = states('sensor.filtered_grid_power')|float / 1000 %}
           {% if power < 0 %}
-            {{ power|abs }}
+            0
           {% else %}
             0
           {% endif %}
@@ -86,7 +85,7 @@ template:
         state: >
           {% set power = states('sensor.filtered_grid_power')|float / 1000 %}
           {% if power >= 0 %}
-            {{ power }}
+            0
           {% else %}
             0
           {% endif %}
@@ -101,6 +100,13 @@ sensor:
       - filter: time_simple_moving_average
         window_size: "00:01"
         precision: 2
+
+  - name: "Solar Power [kWh]"
+    platform: integration
+    source: sensor.pv_power
+    round: 2
+    method: left
+
   - name: "Battery In [kWh]"
     platform: integration
     source: sensor.battery_power_in
@@ -130,3 +136,24 @@ sensor:
     source: sensor.grid_power_in
     round: 2
     method: left
+
+switch:
+  - platform: template
+    switches:
+      battery_load:
+        icon_template: >-
+          {% if is_state('select.inverter_operation_mode', 'eco_charge') %}
+            mdi:battery-charging-30
+          {% else %}
+            mdi:battery-70
+          {% endif %}
+        turn_on:
+          - service: goodwe.load_battery
+            data:
+              device_id: 9a67c4a265bb27d17b4db897dbe84c6b
+              power: 20
+              soc: 40
+        turn_off:
+          - service: goodwe.general_mode
+            data:
+              device_id: 9a67c4a265bb27d17b4db897dbe84c6b

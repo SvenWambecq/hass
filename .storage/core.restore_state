@@ -12,36 +12,197 @@
           "id": "sven",
           "user_id": "579c1a53239a4d8eb7452f3958326eca",
           "device_trackers": [
-            "device_tracker.lg_m700"
+            "device_tracker.lg_m700",
+            "device_tracker.fp4"
           ],
           "friendly_name": "sven"
         },
-        "last_changed": "2023-08-22T20:37:50.064430+00:00",
-        "last_updated": "2023-08-22T20:38:42.006826+00:00",
+        "last_changed": "2023-11-18T13:53:14.456275+00:00",
+        "last_updated": "2023-11-18T14:44:44.938410+00:00",
         "context": {
-          "id": "01H8FFH52PGNRJJH92TEN9VHKN",
+          "id": "01HFHE89RAXKQDP9VVCYBH0JYG",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "timer.timer",
+        "state": "idle",
+        "attributes": {
+          "duration": "0:00:00",
+          "editable": true,
+          "restore": true,
+          "icon": "mdi:av-timer",
+          "friendly_name": "timer"
+        },
+        "last_changed": "2023-11-18T13:53:28.951735+00:00",
+        "last_updated": "2023-11-18T13:53:28.951735+00:00",
+        "context": {
+          "id": "01HFHBADVQJGTTN1JFY31HY2C3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_button.battery_mode_select",
+        "state": "2023-11-12T20:18:21.087543+00:00",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:battery",
+          "friendly_name": "battery mode select"
+        },
+        "last_changed": "2023-11-18T13:53:29.062521+00:00",
+        "last_updated": "2023-11-18T13:53:29.062521+00:00",
+        "context": {
+          "id": "01HFHBADZ64QNTSQA6HCKX6E0W",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.lader",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:battery",
+          "friendly_name": "lader"
+        },
+        "last_changed": "2023-11-18T13:53:29.078324+00:00",
+        "last_updated": "2023-11-18T13:53:29.078324+00:00",
+        "context": {
+          "id": "01HFHBADZPMAYDS24M37S554RB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_select.batterij_mode",
+        "state": "Laden",
+        "attributes": {
+          "options": [
+            "Laden",
+            "Normaal"
+          ],
+          "editable": true,
+          "icon": "mdi:battery-charging",
+          "friendly_name": "Batterij Mode"
+        },
+        "last_changed": "2023-11-18T13:53:29.533781+00:00",
+        "last_updated": "2023-11-18T13:53:29.533781+00:00",
+        "context": {
+          "id": "01HFHBAEDXVMJDJRZDZA7B9SRX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_select.lader",
+        "state": "Normaal",
+        "attributes": {
+          "options": [
+            "Laden",
+            "Normaal"
+          ],
+          "editable": true,
+          "icon": "mdi:battery-charging-30",
+          "friendly_name": "Lader"
+        },
+        "last_changed": "2023-11-18T13:53:29.534448+00:00",
+        "last_updated": "2023-11-18T13:53:29.534448+00:00",
+        "context": {
+          "id": "01HFHBAEDY00KMW22412JQNDCN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.battery_load",
+        "state": "off",
+        "attributes": {
+          "assumed_state": true,
+          "icon": "mdi:battery-charging-30",
+          "friendly_name": "battery_load"
+        },
+        "last_changed": "2023-11-19T07:45:08.659289+00:00",
+        "last_updated": "2023-11-19T07:45:08.659289+00:00",
+        "context": {
+          "id": "01HFK8MNWG75QV5EH1J1018MGB",
+          "parent_id": null,
+          "user_id": "579c1a53239a4d8eb7452f3958326eca"
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.solar_power_kwh",
+        "state": "1419108.42",
+        "attributes": {
+          "state_class": "total",
+          "source": "sensor.pv_power",
+          "unit_of_measurement": "Wh",
+          "device_class": "energy",
+          "friendly_name": "Solar Power [kWh]"
+        },
+        "last_changed": "2023-11-19T10:23:30.803254+00:00",
+        "last_updated": "2023-11-19T10:23:30.803254+00:00",
+        "context": {
+          "id": "01HFKHPNZKNXGW3YGSNS88B0RF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "1419108.42"
+        },
+        "native_unit_of_measurement": "Wh",
+        "source_entity": "sensor.pv_power",
+        "last_valid_state": "1419108.420711922222219903121"
+      },
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.battery_in_kwh",
-        "state": "14.28",
+        "state": "373.43",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_in",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Battery In [kWh]"
         },
-        "last_changed": "2023-08-22T20:38:38.920528+00:00",
-        "last_updated": "2023-08-22T20:38:38.920528+00:00",
+        "last_changed": "2023-11-19T10:23:30.807852+00:00",
+        "last_updated": "2023-11-19T10:23:30.807852+00:00",
         "context": {
-          "id": "01H8FFH228GSJFS1VFPY9PG0XY",
+          "id": "01HFKHPNZQYVS8JQ4T5VEF2972",
           "parent_id": null,
           "user_id": null
         }
@@ -49,29 +210,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "14.28"
+          "decimal_str": "373.43"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_in",
-        "last_valid_state": "14.28099338184749999961385834"
+        "last_valid_state": "373.4260145726213889108409854"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.battery_out_kwh",
-        "state": "17.64",
+        "state": "364.02",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_out",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Battery Out [kWh]"
         },
-        "last_changed": "2023-08-22T20:38:38.923139+00:00",
-        "last_updated": "2023-08-22T20:38:38.923139+00:00",
+        "last_changed": "2023-11-19T09:40:55.991738+00:00",
+        "last_updated": "2023-11-19T09:40:55.991738+00:00",
         "context": {
-          "id": "01H8FFH22BE6JGFKB2J070HHEA",
+          "id": "01HFKF8Q1Q59N9Q2FCFN5NBYR4",
           "parent_id": null,
           "user_id": null
         }
@@ -79,29 +240,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "17.64"
+          "decimal_str": "364.02"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_out",
-        "last_valid_state": "17.63949571380333332776145639"
+        "last_valid_state": "364.0194206330711110981095903"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.in_house_consumption_kwh",
-        "state": "35838.53",
+        "state": "921405.62",
         "attributes": {
           "state_class": "total",
           "source": "sensor.house_consumption",
           "unit_of_measurement": "Wh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "In-house consumption [kWh]"
         },
-        "last_changed": "2023-08-22T20:38:38.929257+00:00",
-        "last_updated": "2023-08-22T20:38:38.929257+00:00",
+        "last_changed": "2023-11-19T10:23:30.807189+00:00",
+        "last_updated": "2023-11-19T10:23:30.807189+00:00",
         "context": {
-          "id": "01H8FFH22H164N6V85D67Z3QJ1",
+          "id": "01HFKHPNZQ0Q9WK37A8EMEMX88",
           "parent_id": null,
           "user_id": null
         }
@@ -109,29 +270,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "35838.53"
+          "decimal_str": "921405.62"
         },
         "native_unit_of_measurement": "Wh",
         "source_entity": "sensor.house_consumption",
-        "last_valid_state": "35838.53032574222223484383697"
+        "last_valid_state": "921405.6198802613888938477958"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.sell_kwh",
-        "state": "73.68",
+        "state": "904.48",
         "attributes": {
           "state_class": "total",
           "source": "sensor.grid_power_out",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Sell [kWh]"
         },
-        "last_changed": "2023-08-22T20:38:38.942515+00:00",
-        "last_updated": "2023-08-22T20:38:38.942515+00:00",
+        "last_changed": "2023-11-18T13:53:30.007278+00:00",
+        "last_updated": "2023-11-18T13:53:33.368644+00:00",
         "context": {
-          "id": "01H8FFH22YPSJTBD7D2SP84ZKF",
+          "id": "01HFHBAJ5RFFBPQYZGE5M0N1TV",
           "parent_id": null,
           "user_id": null
         }
@@ -139,29 +300,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "73.68"
+          "decimal_str": "904.48"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.grid_power_out",
-        "last_valid_state": "73.68358133089291388082832891"
+        "last_valid_state": "904.4800000000000000000000000"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.buy_kwh",
-        "state": "4.26",
+        "state": "77.51",
         "attributes": {
           "state_class": "total",
           "source": "sensor.grid_power_in",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Buy [kWh]"
         },
-        "last_changed": "2023-08-22T20:38:38.943940+00:00",
-        "last_updated": "2023-08-22T20:38:38.943940+00:00",
+        "last_changed": "2023-11-18T13:53:30.010880+00:00",
+        "last_updated": "2023-11-18T13:53:33.368384+00:00",
         "context": {
-          "id": "01H8FFH22Z8BR1CJNZF3DWV0D1",
+          "id": "01HFHBAJ5R95RM37BHNK43BKA9",
           "parent_id": null,
           "user_id": null
         }
@@ -169,29 +330,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "4.26"
+          "decimal_str": "77.51"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.grid_power_in",
-        "last_valid_state": "4.264152994239297221821930839"
+        "last_valid_state": "77.51000000000000000000000000"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.verbruik",
-        "state": "53094.41",
+        "state": "936370.57",
         "attributes": {
           "state_class": "total",
           "source": "sensor.house_consumption",
           "unit_of_measurement": "Wh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Verbruik"
         },
-        "last_changed": "2023-08-22T20:38:38.973854+00:00",
-        "last_updated": "2023-08-22T20:38:38.973854+00:00",
+        "last_changed": "2023-11-19T10:23:30.807426+00:00",
+        "last_updated": "2023-11-19T10:23:30.807426+00:00",
         "context": {
-          "id": "01H8FFH23XFNBB72CYQY7HM90Y",
+          "id": "01HFKHPNZQ1GFFE4S98FKZ43F0",
           "parent_id": null,
           "user_id": null
         }
@@ -199,29 +360,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "53094.41"
+          "decimal_str": "936370.57"
         },
         "native_unit_of_measurement": "Wh",
         "source_entity": "sensor.house_consumption",
-        "last_valid_state": "53094.40776871361112562608372"
+        "last_valid_state": "936370.5703069000000037610157"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.net_verbruik",
-        "state": "158.24",
+        "state": "782.90",
         "attributes": {
           "state_class": "total",
           "source": "sensor.on_grid_power",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Net Verbruik"
         },
-        "last_changed": "2023-08-22T20:38:38.976198+00:00",
-        "last_updated": "2023-08-22T20:38:38.976198+00:00",
+        "last_changed": "2023-11-19T10:19:59.743751+00:00",
+        "last_updated": "2023-11-19T10:19:59.743751+00:00",
         "context": {
-          "id": "01H8FFH240Q6Z7GDFN8D1VK5JF",
+          "id": "01HFKHG7VZQH4JE8Y8S6N86ST3",
           "parent_id": null,
           "user_id": null
         }
@@ -229,29 +390,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "158.24"
+          "decimal_str": "782.90"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.on_grid_power",
-        "last_valid_state": "158.2354360816541666614814504"
+        "last_valid_state": "782.9038976283486111065078473"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.net_verbruik_2",
-        "state": "34270.62",
+        "state": "658942.73",
         "attributes": {
           "state_class": "total",
           "source": "sensor.on_grid_power",
           "unit_of_measurement": "Wh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Net verbruik"
         },
-        "last_changed": "2023-08-22T20:38:38.978941+00:00",
-        "last_updated": "2023-08-22T20:38:38.978941+00:00",
+        "last_changed": "2023-11-19T10:23:30.806881+00:00",
+        "last_updated": "2023-11-19T10:23:30.806881+00:00",
         "context": {
-          "id": "01H8FFH242HFRWNC26S9RN7J5C",
+          "id": "01HFKHPNZPWJM6B9X3FXBZ81PT",
           "parent_id": null,
           "user_id": null
         }
@@ -259,29 +420,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "34270.62"
+          "decimal_str": "658942.73"
         },
         "native_unit_of_measurement": "Wh",
         "source_entity": "sensor.on_grid_power",
-        "last_valid_state": "34270.61608165416666148144663"
+        "last_valid_state": "658942.7276283486111065078473"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.export_power",
-        "state": "89833.49",
+        "state": "768701.41",
         "attributes": {
           "state_class": "total",
           "source": "sensor.on_grid_export_power",
           "unit_of_measurement": "Wh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Export power "
         },
-        "last_changed": "2023-08-22T20:38:38.981153+00:00",
-        "last_updated": "2023-08-22T20:38:38.981153+00:00",
+        "last_changed": "2023-11-19T10:23:30.805591+00:00",
+        "last_updated": "2023-11-19T10:23:30.805591+00:00",
         "context": {
-          "id": "01H8FFH245WX3G96YGM9E63F40",
+          "id": "01HFKHPNZNSKPRE5VR3FZ34QS1",
           "parent_id": null,
           "user_id": null
         }
@@ -289,29 +450,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "89833.49"
+          "decimal_str": "768701.41"
         },
         "native_unit_of_measurement": "Wh",
         "source_entity": "sensor.on_grid_export_power",
-        "last_valid_state": "89833.49313466513885260737238"
+        "last_valid_state": "768701.4052412591666558198480"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.energy_out_2",
-        "state": "604.47",
+        "state": "1026.23",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_out",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Energy Out "
         },
-        "last_changed": "2023-08-22T20:38:38.983396+00:00",
-        "last_updated": "2023-08-22T20:38:38.983396+00:00",
+        "last_changed": "2023-11-19T09:49:12.835016+00:00",
+        "last_updated": "2023-11-19T09:49:12.835016+00:00",
         "context": {
-          "id": "01H8FFH247FXVM1XXD6RXZ1VYJ",
+          "id": "01HFKFQW83AMPQACGAVBPE5VRT",
           "parent_id": null,
           "user_id": null
         }
@@ -319,29 +480,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "604.47"
+          "decimal_str": "1026.23"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_out",
-        "last_valid_state": "604.4658219438833331814358512"
+        "last_valid_state": "1026.225642943289305547854328"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.energy_in",
-        "state": "16.04",
+        "state": "444.98",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_in",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Energy In"
         },
-        "last_changed": "2023-08-22T20:38:38.985519+00:00",
-        "last_updated": "2023-08-22T20:38:38.985519+00:00",
+        "last_changed": "2023-11-19T10:23:20.731057+00:00",
+        "last_updated": "2023-11-19T10:23:20.731057+00:00",
         "context": {
-          "id": "01H8FFH24985YCA39D1KBSYR50",
+          "id": "01HFKHPC4VHGBR17KWZ5D6YVB9",
           "parent_id": null,
           "user_id": null
         }
@@ -349,29 +510,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "16.04"
+          "decimal_str": "444.98"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_in",
-        "last_valid_state": "16.03724657028319443155206524"
+        "last_valid_state": "444.9807364425444444244810940"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.battery_energy_in_2",
-        "state": "16.04",
+        "state": "444.98",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_in",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Battery Energy in"
         },
-        "last_changed": "2023-08-22T20:38:38.987949+00:00",
-        "last_updated": "2023-08-22T20:38:38.987949+00:00",
+        "last_changed": "2023-11-19T10:23:20.731296+00:00",
+        "last_updated": "2023-11-19T10:23:20.731296+00:00",
         "context": {
-          "id": "01H8FFH24B9N4EEMF3Q7SM06XH",
+          "id": "01HFKHPC4VTRF0TDEA06BYV0FR",
           "parent_id": null,
           "user_id": null
         }
@@ -379,29 +540,29 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "16.04"
+          "decimal_str": "444.98"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_in",
-        "last_valid_state": "16.03724657028319443155206524"
+        "last_valid_state": "444.9807364425444444244810940"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.battery_energy_out",
-        "state": "695.18",
+        "state": "1116.94",
         "attributes": {
           "state_class": "total",
           "source": "sensor.battery_power_out",
           "unit_of_measurement": "kWh",
-          "icon": "mdi:chart-histogram",
+          "device_class": "energy",
           "friendly_name": "Battery Energy Out"
         },
-        "last_changed": "2023-08-22T20:38:38.989583+00:00",
-        "last_updated": "2023-08-22T20:38:38.989583+00:00",
+        "last_changed": "2023-11-19T09:49:12.835806+00:00",
+        "last_updated": "2023-11-19T09:49:12.835806+00:00",
         "context": {
-          "id": "01H8FFH24DR6DJM0MKTWWWZJ9A",
+          "id": "01HFKFQW830X9NC4XM6EHKS5ND",
           "parent_id": null,
           "user_id": null
         }
@@ -409,81 +570,127 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "695.18"
+          "decimal_str": "1116.94"
         },
         "native_unit_of_measurement": "kWh",
         "source_entity": "sensor.battery_power_out",
-        "last_valid_state": "695.1758219438833331814358512"
+        "last_valid_state": "1116.935642943289305547854328"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.gas_verbruik_m3_s",
+        "state": "0.0000",
+        "attributes": {
+          "source": "sensor.gas_meter_gasverbruik",
+          "unit_of_measurement": "m³/s",
+          "icon": "mdi:chart-line",
+          "friendly_name": "gas verbruik (m3/s)"
+        },
+        "last_changed": "2023-11-18T13:53:30.076385+00:00",
+        "last_updated": "2023-11-18T13:53:30.076385+00:00",
+        "context": {
+          "id": "01HFHBAEYW104QA8FD2YHYSNQX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "0.0000"
+        },
+        "native_unit_of_measurement": "m³/s"
+      },
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.lg_m700_battery_level",
-        "state": "84",
+        "state": "96",
         "attributes": {
           "unit_of_measurement": "%",
           "device_class": "battery",
-          "icon": "mdi:battery-charging-80",
+          "icon": "mdi:battery-90",
           "friendly_name": "LG-M700 Battery level"
         },
-        "last_changed": "2023-08-22T20:38:39.727785+00:00",
-        "last_updated": "2023-08-22T20:38:39.727785+00:00",
+        "last_changed": "2023-11-19T09:54:04.689346+00:00",
+        "last_updated": "2023-11-19T09:54:04.689346+00:00",
         "context": {
-          "id": "01H8FFH2VF3N595NR0NWQRTSGW",
+          "id": "01HFKG0S8HQ7172KE8YX9963WW",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 84,
+        "native_value": 96,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.lg_m700_battery_state",
-        "state": "charging",
+        "state": "discharging",
         "attributes": {
-          "icon": "mdi:battery-plus",
+          "icon": "mdi:battery-minus",
           "friendly_name": "LG-M700 Battery state"
         },
-        "last_changed": "2023-08-22T20:38:39.728529+00:00",
-        "last_updated": "2023-08-22T20:38:39.728529+00:00",
+        "last_changed": "2023-11-19T09:20:29.711604+00:00",
+        "last_updated": "2023-11-19T09:20:29.711604+00:00",
         "context": {
-          "id": "01H8FFH2VGCTXH6J475CCPNSYQ",
+          "id": "01HFKE39GFQFEFSSEXNR4W09KS",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "charging",
+        "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.lg_m700_charger_type",
-        "state": "ac",
+        "state": "none",
         "attributes": {
-          "icon": "mdi:power-plug",
+          "icon": "mdi:battery",
           "friendly_name": "LG-M700 Charger type"
         },
-        "last_changed": "2023-08-22T20:38:39.729352+00:00",
-        "last_updated": "2023-08-22T20:38:39.729352+00:00",
+        "last_changed": "2023-11-19T09:20:29.712064+00:00",
+        "last_updated": "2023-11-19T09:20:29.712064+00:00",
         "context": {
-          "id": "01H8FFH2VH4JH7XGCZ99TMT8T8",
+          "id": "01HFKE39GG625S16R57E800GCP",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "ac",
+        "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.synchronize_inverter_clock_2",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:clock-check-outline",
+          "friendly_name": "GoodWe Synchronize inverter clock"
+        },
+        "last_changed": "2023-11-18T13:53:31.639672+00:00",
+        "last_updated": "2023-11-18T13:53:31.639672+00:00",
+        "context": {
+          "id": "01HFHBAGFQ4TSYYPPG8WK1GM41",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
@@ -493,183 +700,123 @@
           "source_type": "gps",
           "friendly_name": "LG-M700"
         },
-        "last_changed": "2023-08-22T20:38:39.744421+00:00",
-        "last_updated": "2023-08-22T20:38:39.744421+00:00",
+        "last_changed": "2023-11-18T13:53:31.642552+00:00",
+        "last_updated": "2023-11-18T13:53:31.642552+00:00",
         "context": {
-          "id": "01H8FFH2W0CP49GYEG46JEN2WC",
+          "id": "01HFHBAGFT4Q0XW3NS1ZNWYTD5",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.fp4",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "FP4"
+        },
+        "last_changed": "2023-11-18T14:44:44.946975+00:00",
+        "last_updated": "2023-11-18T14:44:44.946975+00:00",
+        "context": {
+          "id": "01HFHE89RJ9GBYADP252WD7E9N",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.fp4_battery_level",
+        "state": "88",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-80",
+          "friendly_name": "FP4 Battery level"
+        },
+        "last_changed": "2023-11-18T18:27:22.653966+00:00",
+        "last_updated": "2023-11-18T18:27:22.653966+00:00",
+        "context": {
+          "id": "01HFHTZYCXMGHKT9P2QV8CKYEV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 88,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.fp4_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "FP4 Battery state"
+        },
+        "last_changed": "2023-11-18T17:08:17.557988+00:00",
+        "last_updated": "2023-11-18T17:08:17.557988+00:00",
+        "context": {
+          "id": "01HFHPF4GNFDKJJJT72YVYSCTQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.fp4_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "FP4 Charger type"
+        },
+        "last_changed": "2023-11-18T17:08:17.558606+00:00",
+        "last_updated": "2023-11-18T17:08:17.558606+00:00",
+        "context": {
+          "id": "01HFHPF4GPTT6Z862RTE0KVBYV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-11-19T10:23:33.452666+00:00"
     },
     {
       "state": {
         "entity_id": "button.synchronize_inverter_clock",
-        "state": "unknown",
+        "state": "2023-11-11T20:51:29.710560+00:00",
         "attributes": {
           "icon": "mdi:clock-check-outline",
           "friendly_name": "Synchronize inverter clock"
         },
-        "last_changed": "2023-08-22T20:38:41.006868+00:00",
-        "last_updated": "2023-08-22T20:38:41.006868+00:00",
+        "last_changed": "2023-11-13T21:25:59.704003+00:00",
+        "last_updated": "2023-11-13T21:25:59.704003+00:00",
         "context": {
-          "id": "01H8FFH43EXDVXAHFSXW9PNRSA",
+          "id": "01HF597D8R2B8H44B5RZTQ5RQ6",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-08-22T20:38:42.106471+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.battery",
-        "state": "25.38",
-        "attributes": {
-          "state_class": "total",
-          "source": "sensor.battery_power",
-          "unit_of_measurement": "Wh",
-          "device_class": "energy",
-          "friendly_name": "battery"
-        },
-        "last_changed": "2023-08-18T20:14:24.064064+00:00",
-        "last_updated": "2023-08-18T20:14:24.064064+00:00",
-        "context": {
-          "id": "01H854HSA09Y5NJSCWQQQ12REC",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": {
-          "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "25.38"
-        },
-        "native_unit_of_measurement": "Wh",
-        "source_entity": "sensor.battery_power",
-        "last_valid_state": "25.37896528819444409800591225"
-      },
-      "last_seen": "2023-08-18T20:14:54.105440+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.batterij",
-        "state": "-27.74",
-        "attributes": {
-          "state_class": "total",
-          "source": "sensor.battery_power",
-          "unit_of_measurement": "Wh",
-          "device_class": "energy",
-          "friendly_name": "Batterij"
-        },
-        "last_changed": "2023-08-18T20:14:24.064656+00:00",
-        "last_updated": "2023-08-18T20:14:24.064656+00:00",
-        "context": {
-          "id": "01H854HSA0KYDYYZQBB5N77VCH",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": {
-          "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "-27.74"
-        },
-        "native_unit_of_measurement": "Wh",
-        "source_entity": "sensor.battery_power",
-        "last_valid_state": "-27.74103471180555590199408775"
-      },
-      "last_seen": "2023-08-18T20:14:47.047945+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.battery_in_kwh_2",
-        "state": "0.04",
-        "attributes": {
-          "state_class": "total",
-          "source": "sensor.battery_power_out",
-          "unit_of_measurement": "kWh",
-          "device_class": "energy",
-          "friendly_name": "Battery In [kWh]"
-        },
-        "last_changed": "2023-08-18T19:45:52.892634+00:00",
-        "last_updated": "2023-08-18T19:45:52.892634+00:00",
-        "context": {
-          "id": "01H852XJ7WY9NQJZ7CNSBRTKJD",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": {
-          "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "0.04"
-        },
-        "native_unit_of_measurement": "kWh",
-        "source_entity": "sensor.battery_power_out",
-        "last_valid_state": "0.04494368247611111098284276799"
-      },
-      "last_seen": "2023-08-18T19:47:17.399874+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.battery_energy_in",
-        "state": "unknown",
-        "attributes": {
-          "state_class": "total",
-          "source": "sensor.battery_power_in",
-          "unit_of_measurement": "kWh",
-          "device_class": "energy",
-          "icon": "mdi:chart-histogram",
-          "friendly_name": "Battery Energy In"
-        },
-        "last_changed": "2023-08-18T19:11:15.869915+00:00",
-        "last_updated": "2023-08-18T19:11:19.835120+00:00",
-        "context": {
-          "id": "01H850Y9RV6VYHKW874PM02HE9",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": null,
-        "native_unit_of_measurement": "kWh",
-        "source_entity": "sensor.battery_power_in",
-        "last_valid_state": null
-      },
-      "last_seen": "2023-08-18T19:17:12.466009+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.energy_out",
-        "state": "319425.71",
-        "attributes": {
-          "state_class": "total",
-          "source": "sensor.battery_power_out",
-          "unit_of_measurement": "kWh",
-          "device_class": "energy",
-          "friendly_name": "Energy Out"
-        },
-        "last_changed": "2023-08-18T17:10:40.798535+00:00",
-        "last_updated": "2023-08-18T17:10:40.798535+00:00",
-        "context": {
-          "id": "01H84T1CCYNS53C6P91592XF51",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": {
-          "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "319425.71"
-        },
-        "native_unit_of_measurement": "kWh",
-        "source_entity": "sensor.battery_power_out",
-        "last_valid_state": "319425.7057823488630555554391"
-      },
-      "last_seen": "2023-08-18T17:10:48.235540+00:00"
+      "last_seen": "2023-11-13T21:26:12.636903+00:00"
     }
   ]
 }

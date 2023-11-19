@@ -15,7 +15,7 @@
         "pref_disable_polling": false,
         "source": "integration_discovery",
         "unique_id": "B8:27:EB:FA:72:F6",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "348242d18d9f69c61650039f9b627178",
@@ -26,7 +26,7 @@
           "udn": "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e",
           "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1",
           "original_udn": "uuid:75802409-bccb-40e7-8e6c-fa095ecce13e",
-          "location": "http://192.168.1.1:49152/62714942/gatedesc0b.xml",
+          "location": "http://192.168.1.1:49152/67746146/gatedesc0b.xml",
           "mac_address": null,
           "host": "192.168.1.1"
         },
@@ -46,7 +46,11 @@
           "host": "192.168.68.110",
           "model_family": "ES"
         },
-        "options": {},
+        "options": {
+          "scan_interval": 5,
+          "network_retries": 10,
+          "network_timeout": 1
+        },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
@@ -87,7 +91,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2023.8.2-full (10992)",
+          "app_version": "2023.10.2-full (11484)",
           "device_name": "LG-M700",
           "manufacturer": "LGE",
           "model": "LG-M700",
@@ -116,7 +120,7 @@
         "domain": "androidtv_remote",
         "title": "Huiskamer",
         "data": {
-          "host": "192.168.68.104",
+          "host": "192.168.68.112",
           "name": "Huiskamer"
         },
         "options": {},
@@ -170,7 +174,7 @@
           "original_udn": "uuid:e4c797e0-82ce-4f84-b56d-085d9d77c8cd",
           "mac_address": "d8:0d:17:0b:d4:04",
           "host": "192.168.68.1",
-          "location": "http://[::da0d:17ff:fe0b:d404]:1900/rootDesc.xml"
+          "location": "http://192.168.68.1:1900/rootDesc.xml"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -244,7 +248,10 @@
         "version": 1,
         "domain": "ipp",
         "title": "EPSON ET-3700 Series",
-        "data": {},
+        "data": {
+          "host": "192.168.68.115",
+          "name": "EPSON ET-3700 Series"
+        },
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
@@ -271,7 +278,7 @@
         "domain": "ipp",
         "title": "EPSON ET-3700 Series",
         "data": {
-          "host": "192.168.68.112",
+          "host": "192.168.68.115",
           "name": "EPSON ET-3700 Series"
         },
         "options": {},
@@ -372,6 +379,122 @@
         "pref_disable_polling": false,
         "source": "ignore",
         "unique_id": "cast",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "30a1baa458ae3106354508597f856d15",
+        "version": 1,
+        "domain": "forecast_solar",
+        "title": "Home",
+        "data": {
+          "latitude": 50.89233978360891,
+          "longitude": 4.751319141342004
+        },
+        "options": {
+          "azimuth": 170,
+          "declination": 45,
+          "modules power": 5900
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "087eb9e08eade480af88722bc8b17123",
+        "version": 1,
+        "domain": "forecast_solar",
+        "title": "Home",
+        "data": {
+          "latitude": 50.89233978360891,
+          "longitude": 4.751319141342004
+        },
+        "options": {
+          "azimuth": 175,
+          "declination": 45,
+          "modules power": 5880
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "1781d396437a6062b523acf3196cb864",
+        "version": 1,
+        "domain": "dsmr",
+        "title": "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AB8ARQQW-if00-port0",
+        "data": {
+          "port": "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AB8ARQQW-if00-port0",
+          "dsmr_version": "5B",
+          "serial_id": "3153414731313030383432373431",
+          "serial_id_gas": null,
+          "protocol": "dsmr_protocol"
+        },
+        "options": {
+          "time_between_update": 120
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "3153414731313030383432373431",
+        "disabled_by": "user"
+      },
+      {
+        "entry_id": "edd626a2c5d663671cc7b78d65dd5874",
+        "version": 1,
+        "domain": "derivative",
+        "title": "gas verbruik (m3/s)",
+        "data": {},
+        "options": {
+          "name": "gas verbruik (m3/s)",
+          "source": "sensor.gas_meter_gasverbruik",
+          "round": 4.0,
+          "time_window": {
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 0
+          },
+          "unit_prefix": "none",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "078a443ecaa4b2acff7760e1bedc13ef",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "FP4",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.10.2-full (11484)",
+          "device_name": "FP4",
+          "manufacturer": "Fairphone",
+          "model": "FP4",
+          "os_name": "Android",
+          "os_version": "33",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "cZ-PAAxnQl2BoqlCj_6qGn:APA91bE7khyIkIfrIZabUDcIQK5SXU3ItE0RnTDAo0aSuPTyodqTCu5qj8mC_5jNfHKlZoxOvSpQwujMVTzWByPZ4MEbxN4URZetOoTOytfMcI9PaYDTA8liC_-r2PbqXVbnzySN_wKa"
+          },
+          "device_id": "b51c0114fa8ca803",
+          "webhook_id": "412997fdd0e87ba17adb121a3a8d91d1c5cf1f5c1f2500e902d555e1b2d43227",
+          "user_id": "579c1a53239a4d8eb7452f3958326eca"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-b51c0114fa8ca803",
         "disabled_by": null
       }
     ]

@@ -31,6 +31,18 @@
               }
             },
             {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.battery_load",
+                  "secondary_info": "none"
+                }
+              ],
+              "state_color": true,
+              "show_header_toggle": true,
+              "title": "Manueel Laden"
+            },
+            {
               "type": "custom:plotly-graph",
               "entities": [
                 {
@@ -112,6 +124,9 @@
               "hours_to_show": 24,
               "refresh_interval": 10,
               "title": "Power",
+              "config": {
+                "scrollZoom": false
+              },
               "layout": {
                 "xaxis": {
                   "rangeselector": {
@@ -139,13 +154,59 @@
               }
             },
             {
+              "type": "gauge",
+              "entity": "sensor.current_average_demand",
+              "name": "Capaciteit",
+              "unit": "kW",
+              "needle": true,
+              "max": 5,
+              "min": 0,
+              "severity": {
+                "green": 0,
+                "yellow": 2,
+                "red": 2.5
+              }
+            },
+            {
               "type": "energy-date-selection"
             },
             {
-              "type": "energy-distribution"
+              "type": "energy-distribution",
+              "link_dashboard": true
             },
             {
               "type": "energy-usage-graph"
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "entities": [
+                {
+                  "entity": "sensor.current_average_demand"
+                }
+              ],
+              "name": "Kwartierverbuik",
+              "points_per_hour": 4,
+              "bar_spacing": 0,
+              "aggregate_func": "max",
+              "update_interval": 900,
+              "show": {
+                "graph": "bar",
+                "labels": true
+              },
+              "color_thresholds": [
+                {
+                  "value": 0,
+                  "color": "#00a000"
+                },
+                {
+                  "value": 2,
+                  "color": "#FFA500"
+                },
+                {
+                  "value": 2.5,
+                  "color": "#f00000"
+                }
+              ]
             }
           ]
         }
