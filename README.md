@@ -52,7 +52,8 @@ The basic idea is as follows:
    ```
 
 2. Update certificate:
-   ```sudo systemctl stop nginx
+   ```
+      sudo systemctl stop nginx
       sudo certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
       sudo systemctl start nginx
    ```
