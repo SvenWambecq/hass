@@ -64,3 +64,11 @@ https://community.home-assistant.io/t/autostart-using-systemd/199497
 ### App
 
 https://companion.home-assistant.io/docs/troubleshooting/networking/
+
+### DB
+
+Fixing errors in the database (sqlite)
+
+```
+UPDATE "main"."statistics" SET "sum" = "sum" - 360.501  WHERE "metadata_id" = 105 AND "sum" > 400
+```
