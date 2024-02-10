@@ -63,7 +63,7 @@ def dimension(v):
         return v
 
 BASE_URL = "http://localhost:8123/api/states/sensor.{sensor}"
-TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkOTIyY2VkMWI2OGQ0YzRiYTg2ZGM5MjUzYmQ1OTExZiIsImlhdCI6MTY5OTMwOTMyOCwiZXhwIjoyMDE0NjY5MzI4fQ.wO3_FWiEjSvUkTBom6FGsDO1kqnaStEXVcaZRDlw0E4"
+TOKEN = "TOKEN"
 HEADER = {"Authorization": f"Bearer {TOKEN}",  "content-type": "application/json"}
 
 for telegram in serial_reader.read():
