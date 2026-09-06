@@ -27,51 +27,63 @@ views:
           battery_charge: sensor.battery_state_of_charge
           solar: sensor.pv_power
           grid: sensor.on_grid_export_power
-      - type: custom:plotly-graph
-        entities:
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Power
+        graph_span: 24h
+        update_interval: 1min
+        apex_config:
+          chart:
+            toolbar:
+              show: true
+              tools:
+                zoom: true
+                zoomin: true
+                zoomout: true
+                pan: true
+                reset: true
+        yaxis:
+          - id: power
+            decimals: 0
+          - id: soc
+            opposite: true
+            min: 0
+            max: 100
+            decimals: 0
+        series:
           - entity: sensor.pv_power
-            filters:
-              - resample: 1m
-              - sliding_window_moving_average:
-                  - window_size: 1
+            name: PV
+            yaxis_id: power
+            group_by:
+              func: avg
+              duration: 1min
           - entity: sensor.battery_power
-            filters:
-              - resample: 1m
-              - sliding_window_moving_average:
-                  - window_size: 1
+            name: Battery
+            yaxis_id: power
+            group_by:
+              func: avg
+              duration: 1min
           - entity: sensor.on_grid_export_power
-            filters:
-              - resample: 1m
-              - sliding_window_moving_average:
-                  - window_size: 1
+            name: Grid
+            yaxis_id: power
+            group_by:
+              func: avg
+              duration: 1min
           - entity: sensor.house_consumption
-            filters:
-              - resample: 1m
-              - sliding_window_moving_average:
-                  - window_size: 1
+            name: Consumption
+            yaxis_id: power
+            group_by:
+              func: avg
+              duration: 1min
           - entity: sensor.battery_state_of_charge
-            filters:
-              - resample: 5m
-              - sliding_window_moving_average:
-                  - window_size: 10
-        hours_to_show: 24
-        refresh_interval: 10
-        title: Power
-        config:
-          scrollZoom: false
-        layout:
-          xaxis:
-            rangeselector:
-              y: 1.2
-              buttons:
-                - count: 6
-                  step: hour
-                - count: 12
-                  step: hour
-                - count: 1
-                  step: day
-                - count: 2
-                  step: day
+            name: SoC
+            yaxis_id: soc
+            curve: smooth
+            stroke_width: 2
+            group_by:
+              func: avg
+              duration: 5min
       - type: gauge
         entity: sensor.current_average_demand
         name: Capaciteit
