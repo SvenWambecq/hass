@@ -35,9 +35,14 @@ views:
         update_interval: 1min
         apex_config:
           chart:
+            zoom:
+              enabled: true
+              type: x
+              autoScaleYaxis: true
             toolbar:
               show: true
               tools:
+                selection: true
                 zoom: true
                 zoomin: true
                 zoomout: true
@@ -55,24 +60,28 @@ views:
           - entity: sensor.pv_power
             name: PV
             yaxis_id: power
+            stroke_width: 1.5
             group_by:
               func: avg
               duration: 1min
           - entity: sensor.battery_power
             name: Battery
             yaxis_id: power
+            stroke_width: 1.5
             group_by:
               func: avg
               duration: 1min
           - entity: sensor.on_grid_export_power
             name: Grid
             yaxis_id: power
+            stroke_width: 1.5
             group_by:
               func: avg
               duration: 1min
           - entity: sensor.house_consumption
             name: Consumption
             yaxis_id: power
+            stroke_width: 1.5
             group_by:
               func: avg
               duration: 1min
@@ -80,7 +89,7 @@ views:
             name: SoC
             yaxis_id: soc
             curve: smooth
-            stroke_width: 2
+            stroke_width: 1.5
             group_by:
               func: avg
               duration: 5min
