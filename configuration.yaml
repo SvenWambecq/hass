@@ -94,7 +94,6 @@ template:
           {% else %}
             0
           {% endif %}
-        availability: true
 
       - name: "Battery Power Out"
         unit_of_measurement: "kW"
@@ -108,7 +107,6 @@ template:
           {% else %}
             0
           {% endif %}
-        availability: true
 
       - name: "Grid Power In"
         unique_id: grid_power_in
@@ -122,7 +120,6 @@ template:
           {% else %}
             0
           {% endif %}
-        availability: true
 
       - name: "Grid Power Out"
         unique_id: grid_power_out
@@ -136,7 +133,6 @@ template:
           {% else %}
             0
           {% endif %}
-        availability: true
 
       - name: "Three Month Peak Demand"
         unique_id: three_month_peak_demand
@@ -149,7 +145,6 @@ template:
             states('input_number.demand_peak_previous_month') | float(0),
             states('input_number.demand_peak_two_months_ago') | float(0)
           ] | max }}
-        availability: true
 
       - name: "Demand peak current month"
         unique_id: demand_peak_current_month_sensor
