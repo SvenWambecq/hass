@@ -1,1 +1,45 @@
-[]
+- id: '1733073400704'
+  alias: Nieuwe automatisering
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: or
+    conditions:
+    - type: is_value
+      condition: device
+      device_id: a2b6143ebabd1673562dd1a6c8d65511
+      entity_id: 341e49379352b92c066b5113160cf586
+      domain: sensor
+      below: 30
+    - type: is_value
+      condition: device
+      device_id: a2b6143ebabd1673562dd1a6c8d65511
+      entity_id: 9eda79b2bf3d1a4893962c42e9bbb023
+      domain: sensor
+      below: 30
+    - type: is_value
+      condition: device
+      device_id: a2b6143ebabd1673562dd1a6c8d65511
+      entity_id: a70603f40a46a18b09a66d1e3aef62da
+      domain: sensor
+      below: 30
+    - type: is_value
+      condition: device
+      device_id: a2b6143ebabd1673562dd1a6c8d65511
+      entity_id: 1c3077d1029779b5bb3ef6aa86aea813
+      domain: sensor
+      below: 30
+  action:
+  - device_id: ecc280c120b00b0ad1b562abecf66c17
+    domain: mobile_app
+    type: notify
+    message: 'Ink level below 30%. Check Printer '
+    title: 'Ink Level too low '
+  - device_id: 7177bc2f67195b606ac5d077382f8c4a
+    domain: mobile_app
+    type: notify
+    message: 'Ink level below 30%. Check Printer '
+    title: 'Ink Level too low '
+  mode: single

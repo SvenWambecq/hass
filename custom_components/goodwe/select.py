@@ -102,7 +102,7 @@ async def async_setup_entry(
 class InverterOperationModeEntity(SelectEntity):
     """Entity representing the inverter operation mode."""
 
-    _attr_should_poll = False
+    _attr_should_poll = True
     _attr_has_entity_name = True
 
     def __init__(
