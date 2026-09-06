@@ -147,6 +147,27 @@ sensor:
         window_size: "00:01"
         precision: 2
 
+  - platform: statistics
+    name: "Average demand last hour"
+    entity_id: sensor.current_average_demand
+    state_characteristic: mean
+    max_age:
+      hours: 1
+
+  - platform: statistics
+    name: "Average demand last 24 hours"
+    entity_id: sensor.current_average_demand
+    state_characteristic: mean
+    max_age:
+      hours: 24
+
+  - platform: statistics
+    name: "Average demand last 7 days"
+    entity_id: sensor.current_average_demand
+    state_characteristic: mean
+    max_age:
+      days: 7
+
   - name: "Solar Power [kWh]"
     platform: integration
     source: sensor.pv_power
