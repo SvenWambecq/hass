@@ -32,7 +32,7 @@ views:
           show: true
           title: Power
         graph_span: 24h
-        update_interval: 1min
+        update_interval: 2min
         apex_config:
           chart:
             zoom:
@@ -50,41 +50,47 @@ views:
                 reset: true
         yaxis:
           - id: power
+            min: -3000
+            max: 6000
             decimals: 0
           - id: soc
             opposite: true
-            min: 0
+            min: -50
             max: 100
             decimals: 0
         series:
           - entity: sensor.pv_power
             name: PV
             yaxis_id: power
+            curve: smooth
             stroke_width: 1.5
             group_by:
               func: avg
-              duration: 1min
+              duration: 2min
           - entity: sensor.battery_power
             name: Battery
             yaxis_id: power
+            curve: smooth
             stroke_width: 1.5
             group_by:
               func: avg
-              duration: 1min
+              duration: 2min
           - entity: sensor.on_grid_export_power
             name: Grid
             yaxis_id: power
+            curve: smooth
             stroke_width: 1.5
             group_by:
               func: avg
-              duration: 1min
+              duration: 2min
           - entity: sensor.house_consumption
             name: Consumption
             yaxis_id: power
+            curve: smooth
             stroke_width: 1.5
             group_by:
               func: avg
-              duration: 1min
+              duration: 2min
           - entity: sensor.battery_state_of_charge
             name: SoC
             yaxis_id: soc
