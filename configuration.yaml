@@ -137,6 +137,52 @@ template:
           ] | max }}
         availability: true
 
+      - name: "Demand peak current month"
+        unique_id: demand_peak_current_month_sensor
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: "{{ states('input_number.demand_peak_current_month') | float(0) }}"
+
+      - name: "Demand peak previous month"
+        unique_id: demand_peak_previous_month_sensor
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: "{{ states('input_number.demand_peak_previous_month') | float(0) }}"
+
+      - name: "Demand peak two months ago"
+        unique_id: demand_peak_two_months_ago_sensor
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: "{{ states('input_number.demand_peak_two_months_ago') | float(0) }}"
+
+      - name: "Demand tariff max"
+        unique_id: demand_tariff_max
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >-
+          {{ [
+            2.5,
+            states('input_number.demand_peak_previous_month') | float(0),
+            states('input_number.demand_peak_two_months_ago') | float(0)
+          ] | max }}
+
+      - name: "Demand global max"
+        unique_id: demand_global_max
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >-
+          {{ [
+            2.5,
+            states('input_number.demand_peak_current_month') | float(0),
+            states('input_number.demand_peak_previous_month') | float(0),
+            states('input_number.demand_peak_two_months_ago') | float(0)
+          ] | max }}
+
 sensor:
   - platform: filter
     name: "filtered grid_power"
