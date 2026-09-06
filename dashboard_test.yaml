@@ -124,13 +124,13 @@ views:
       - type: entities
         title: Kwartierverbruik - maandpieken
         entities:
-          - entity: sensor.demand_peak_two_months_ago
+          - entity: input_number.demand_peak_two_months_ago
             name: M-2
-          - entity: sensor.demand_peak_previous_month
+          - entity: input_number.demand_peak_previous_month
             name: M-1
-          - entity: sensor.demand_peak_current_month
+          - entity: input_number.demand_peak_current_month
             name: Huidige maand
-          - entity: sensor.demand_tariff_max
+          - entity: input_number.demand_tariff_max
             name: MAX (M-2, M-1, 2.5 kW)
-          - entity: sensor.demand_global_max
+          - entity: input_number.demand_global_max
             name: Globale max (3 maanden)
