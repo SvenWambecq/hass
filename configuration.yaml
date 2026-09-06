@@ -17,6 +17,16 @@ homeassistant:
   latitude: 50.89233978360891
   longitude: 4.751319141342004
 
+lovelace:
+  dashboards:
+    dashboard-test:
+      mode: yaml
+      title: Test
+      icon: mdi:home-lightning-bolt-outline
+      show_in_sidebar: true
+      require_admin: false
+      filename: dashboard_test.yaml
+
 # duckdns:
 #   domain: sveneniris
 #   access_token: 0e26191e-5e43-4beb-8024-9fde88c1d9d1
