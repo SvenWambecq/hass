@@ -27,13 +27,6 @@ views:
           battery_charge: sensor.battery_state_of_charge
           solar: sensor.pv_power
           grid: sensor.on_grid_export_power
-      - type: entities
-        entities:
-          - entity: switch.battery_load
-            secondary_info: none
-        state_color: true
-        show_header_toggle: true
-        title: Manueel Laden
       - type: custom:plotly-graph
         entities:
           - entity: sensor.pv_power
