@@ -3,3 +3,5 @@ tts
 home-assistant_v2.*
 home-assistant.log*
 .HA_VERSION
+.storage
+.cache
