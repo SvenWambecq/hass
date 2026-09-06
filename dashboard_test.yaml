@@ -97,11 +97,13 @@ views:
         link_dashboard: true
       - type: energy-usage-graph
       - type: custom:apexcharts-card
+        experimental:
+          color_threshold: true
         header:
           show: true
           title: Kwartierverbuik
         graph_span: 24h
-        update_interval: 900
+        update_interval: 15min
         yaxis:
           - min: 0
             max: 3
@@ -115,7 +117,7 @@ views:
             type: column
             group_by:
               func: max
-              duration: 15m
+              duration: 15min
             color_threshold:
               - value: 0
                 color: "#00a000"
@@ -131,7 +133,7 @@ views:
             stroke_width: 2
             group_by:
               func: last
-              duration: 15m
+              duration: 15min
       - type: entities
         title: Kwartierverbruik - maandpieken
         entities:
