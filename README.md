@@ -70,6 +70,7 @@ https://companion.home-assistant.io/docs/troubleshooting/networking/
 ### DB
 
 Fixing errors in the database (sqlite)
+Do not use this. There is support for this in HA. 
 
 ```
 UPDATE "main"."statistics" SET "sum" = "sum" - 360.501  WHERE "metadata_id" = 105 AND "sum" > 400
