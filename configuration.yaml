@@ -139,6 +139,7 @@ template:
 
       - name: "Demand peak current month"
         unique_id: demand_peak_current_month_sensor
+        default_entity_id: sensor.demand_peak_current_month
         unit_of_measurement: "kW"
         device_class: power
         state_class: measurement
@@ -146,6 +147,7 @@ template:
 
       - name: "Demand peak previous month"
         unique_id: demand_peak_previous_month_sensor
+        default_entity_id: sensor.demand_peak_previous_month
         unit_of_measurement: "kW"
         device_class: power
         state_class: measurement
@@ -153,6 +155,7 @@ template:
 
       - name: "Demand peak two months ago"
         unique_id: demand_peak_two_months_ago_sensor
+        default_entity_id: sensor.demand_peak_two_months_ago
         unit_of_measurement: "kW"
         device_class: power
         state_class: measurement
@@ -160,6 +163,7 @@ template:
 
       - name: "Demand tariff max"
         unique_id: demand_tariff_max
+        default_entity_id: sensor.demand_tariff_max
         unit_of_measurement: "kW"
         device_class: power
         state_class: measurement
@@ -172,6 +176,7 @@ template:
 
       - name: "Demand global max"
         unique_id: demand_global_max
+        default_entity_id: sensor.demand_global_max
         unit_of_measurement: "kW"
         device_class: power
         state_class: measurement
