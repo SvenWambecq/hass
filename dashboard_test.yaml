@@ -96,24 +96,42 @@ views:
       - type: energy-distribution
         link_dashboard: true
       - type: energy-usage-graph
-      - type: custom:mini-graph-card
-        entities:
-          - entity: sensor.current_average_demand
-        name: Kwartierverbuik
-        points_per_hour: 4
-        bar_spacing: 0
-        aggregate_func: max
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Kwartierverbuik
+        graph_span: 24h
         update_interval: 900
-        show:
-          graph: bar
-          labels: true
-        color_thresholds:
-          - value: 0
-            color: "#00a000"
-          - value: 2
-            color: "#FFA500"
-          - value: 2.5
-            color: "#f00000"
+        yaxis:
+          - min: 0
+            max: 3
+        apex_config:
+          chart:
+            toolbar:
+              show: false
+        series:
+          - entity: sensor.current_average_demand
+            name: Kwartierverbuik
+            type: column
+            group_by:
+              func: max
+              duration: 15m
+            color_threshold:
+              - value: 0
+                color: "#00a000"
+              - value: 2
+                color: "#FFA500"
+              - value: 2.5
+                color: "#f00000"
+          - entity: input_number.demand_peak_current_month
+            name: Piek huidige maand
+            type: line
+            curve: stepline
+            color: "#000000"
+            stroke_width: 2
+            group_by:
+              func: last
+              duration: 15m
       - type: entities
         title: Kwartierverbruik - maandpieken
         entities:
@@ -123,7 +141,7 @@ views:
             name: M-1
           - entity: input_number.demand_peak_current_month
             name: Huidige maand
-          - entity: input_number.demand_tariff_max
+          - entity: sensor.demand_tariff_max
             name: MAX (M-2, M-1, 2.5 kW)
-          - entity: input_number.demand_global_max
+          - entity: sensor.demand_global_max
             name: Globale max (3 maanden)
