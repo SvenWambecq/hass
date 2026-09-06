@@ -1,4 +1,4 @@
- - alias: Update current month demand peak
+- alias: Update current month demand peak
   trigger:
     - platform: state
       entity_id: sensor.current_average_demand
@@ -19,7 +19,7 @@
         value: "{{ trigger.to_state.state | float(0) }}"
   mode: queued
 
- - alias: Roll demand peaks at month start
+- alias: Roll demand peaks at month start
   trigger:
     - platform: time
       at: "00:00:00"
