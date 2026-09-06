@@ -106,7 +106,7 @@ views:
         update_interval: 15min
         yaxis:
           - min: 0
-            max: 3
+            decimals: 1
         apex_config:
           chart:
             toolbar:
@@ -129,7 +129,7 @@ views:
             name: Piek huidige maand
             type: line
             curve: stepline
-            color: "#000000"
+            color: "#f00000"
             stroke_width: 2
             group_by:
               func: last
