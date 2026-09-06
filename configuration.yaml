@@ -12,6 +12,29 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+input_number:
+  demand_peak_current_month:
+    name: Demand peak current month
+    min: 0
+    max: 50
+    step: 0.01
+    unit_of_measurement: kW
+    mode: box
+  demand_peak_previous_month:
+    name: Demand peak previous month
+    min: 0
+    max: 50
+    step: 0.01
+    unit_of_measurement: kW
+    mode: box
+  demand_peak_two_months_ago:
+    name: Demand peak two months ago
+    min: 0
+    max: 50
+    step: 0.01
+    unit_of_measurement: kW
+    mode: box
+
 homeassistant:
   external_url: https://sveneniris.duckdns.org
   latitude: 50.89233978360891
@@ -21,7 +44,7 @@ lovelace:
   dashboards:
     dashboard-test:
       mode: yaml
-      title: Test
+      title: Verbruik
       icon: mdi:home-lightning-bolt-outline
       show_in_sidebar: true
       require_admin: false
@@ -99,6 +122,19 @@ template:
           {% else %}
             0
           {% endif %}
+        availability: true
+
+      - name: "Three Month Peak Demand"
+        unique_id: three_month_peak_demand
+        unit_of_measurement: "kW"
+        device_class: power
+        state_class: measurement
+        state: >-
+          {{ [
+            states('input_number.demand_peak_current_month') | float(0),
+            states('input_number.demand_peak_previous_month') | float(0),
+            states('input_number.demand_peak_two_months_ago') | float(0)
+          ] | max }}
         availability: true
 
 sensor:
