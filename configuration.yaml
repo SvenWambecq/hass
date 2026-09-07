@@ -71,7 +71,7 @@ lovelace:
       mode: yaml
       title: Beheer
       icon: mdi:shield-cog-outline
-      show_in_sidebar: true
+      show_in_sidebar: false
       require_admin: true
       filename: admin.yaml
 
