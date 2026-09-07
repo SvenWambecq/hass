@@ -168,8 +168,19 @@ views:
             decimals: 1
         apex_config:
           chart:
+            zoom:
+              enabled: true
+              type: x
+              autoScaleYaxis: true
             toolbar:
-              show: false
+              show: true
+              tools:
+                selection: true
+                zoom: true
+                zoomin: true
+                zoomout: true
+                pan: true
+                reset: true
         series:
           - entity: sensor.current_average_demand
             name: Dagelijkse piek
@@ -186,16 +197,3 @@ views:
                 color: "#FFA500"
               - value: 2.5
                 color: "#f00000"
-      - type: entities
-        title: Kwartierverbruik - maandpieken
-        entities:
-          - entity: input_number.demand_peak_two_months_ago
-            name: M-2
-          - entity: input_number.demand_peak_previous_month
-            name: M-1
-          - entity: input_number.demand_peak_current_month
-            name: Huidige maand
-          - entity: sensor.demand_tariff_max
-            name: MAX (M-2, M-1, 2.5 kW)
-          - entity: sensor.demand_global_max
-            name: Globale max (3 maanden)
