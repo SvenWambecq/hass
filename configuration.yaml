@@ -14,7 +14,7 @@ scene: !include scenes.yaml
 
 shell_command:
   renew_certificate: "/home/homeassistant/.homeassistant/renew_certificate.sh"
-  git_pull_config: "git -C /home/homeassistant/.homeassistant pull"
+  git_pull_config: "/usr/bin/git -C /home/homeassistant/.homeassistant pull"
 
 input_number:
   demand_peak_current_month:
