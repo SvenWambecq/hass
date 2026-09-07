@@ -165,8 +165,13 @@ views:
         header:
           show: true
           title: Dagelijkse piek
-        graph_span: 90d
+        graph_span: 2y
         update_interval: 1h
+        experimental:
+          color_threshold: true
+          brush: true
+        brush:
+          selection_span: 90d
         yaxis:
           - min: 0
             decimals: 1
@@ -181,6 +186,8 @@ views:
             statistics:
               type: max
               period: day
+            show:
+              in_brush: true
             color_threshold:
               - value: 0
                 color: "#00a000"
