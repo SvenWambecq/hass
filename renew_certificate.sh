@@ -3,6 +3,6 @@
 # Requires passwordless sudo for the exact commands below (see README.md).
 set -e
 
-sudo systemctl stop nginx
-sudo certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
-sudo systemctl start nginx
+sudo /usr/bin/systemctl stop nginx
+sudo /usr/bin/certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
+sudo /usr/bin/systemctl start nginx
