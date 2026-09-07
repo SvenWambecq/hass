@@ -67,13 +67,13 @@ lovelace:
       show_in_sidebar: true
       require_admin: false
       filename: dashboard_test.yaml
-      admin:
-        mode: yaml
-        title: Beheer
-        icon: mdi:shield-cog-outline
-        show_in_sidebar: true
-        require_admin: true
-        filename: admin.yaml
+    admin:
+      mode: yaml
+      title: Beheer
+      icon: mdi:shield-cog-outline
+      show_in_sidebar: true
+      require_admin: true
+      filename: admin.yaml
 
 # duckdns:
 #   domain: sveneniris
