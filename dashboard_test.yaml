@@ -165,7 +165,7 @@ views:
         header:
           show: true
           title: Dagelijkse piek
-        graph_span: 31d
+        graph_span: 90d
         update_interval: 1h
         yaxis:
           - min: 0
@@ -178,9 +178,9 @@ views:
           - entity: sensor.current_average_demand
             name: Dagelijkse piek
             type: column
-            group_by:
-              func: max
-              duration: 1d
+            statistics:
+              type: max
+              period: day
             color_threshold:
               - value: 0
                 color: "#00a000"
