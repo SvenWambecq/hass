@@ -1,0 +1,28 @@
+title: Beheer
+views:
+  - title: Onderhoud
+    path: maintenance
+    icon: mdi:tools
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: button
+            name: Renew certificate
+            icon: mdi:certificate-outline
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.renew_certificate
+              confirmation:
+                text: Nginx will be stopped briefly while the certificate is renewed. Continue?
+          - type: button
+            name: Git pull config
+            icon: mdi:source-pull
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.git_pull_config
+              confirmation:
+                text: Pull latest changes from the config repo?

@@ -1,0 +1,13 @@
+renew_certificate:
+  alias: "Renew certificate"
+  icon: mdi:certificate-outline
+  sequence:
+    - service: shell_command.renew_certificate
+  mode: single
+
+git_pull_config:
+  alias: "Git pull HA config"
+  icon: mdi:source-pull
+  sequence:
+    - service: shell_command.git_pull_config
+  mode: single

@@ -12,6 +12,10 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+shell_command:
+  renew_certificate: "/home/homeassistant/.homeassistant/renew_certificate.sh"
+  git_pull_config: "git -C /home/homeassistant/.homeassistant pull"
+
 input_number:
   demand_peak_current_month:
     name: Demand peak current month
@@ -63,6 +67,13 @@ lovelace:
       show_in_sidebar: true
       require_admin: false
       filename: dashboard_test.yaml
+      admin:
+        mode: yaml
+        title: Beheer
+        icon: mdi:shield-cog-outline
+        show_in_sidebar: true
+        require_admin: true
+        filename: admin.yaml
 
 # duckdns:
 #   domain: sveneniris
