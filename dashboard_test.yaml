@@ -161,6 +161,33 @@ views:
             group_by:
               func: last
               duration: 15min
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Dagelijkse piek
+        graph_span: 31d
+        update_interval: 1h
+        yaxis:
+          - min: 0
+            decimals: 1
+        apex_config:
+          chart:
+            toolbar:
+              show: false
+        series:
+          - entity: sensor.current_average_demand
+            name: Dagelijkse piek
+            type: column
+            group_by:
+              func: max
+              duration: 1d
+            color_threshold:
+              - value: 0
+                color: "#00a000"
+              - value: 2
+                color: "#FFA500"
+              - value: 2.5
+                color: "#f00000"
       - type: entities
         title: Kwartierverbruik - maandpieken
         entities:
