@@ -67,7 +67,7 @@ lovelace:
       show_in_sidebar: true
       require_admin: false
       filename: dashboard_test.yaml
-    admin:
+    admin-dashboard:
       mode: yaml
       title: Beheer
       icon: mdi:shield-cog-outline
