@@ -52,19 +52,27 @@ views:
             group_by:
               func: avg
               duration: 5min
-      - type: glance
+      - type: grid
         title: Temperaturen
-        show_state: true
-        show_name: true
-        entities:
-          - entity: sensor.thuis_ventilatie_outdoor_air_temperature
+        columns: 4
+        square: false
+        cards:
+          - type: tile
+            entity: sensor.thuis_ventilatie_outdoor_air_temperature
             name: Buitenlucht
-          - entity: sensor.thuis_ventilatie_supply_air_temperature
+            color: blue
+          - type: tile
+            entity: sensor.thuis_ventilatie_supply_air_temperature
             name: Toevoerlucht
-          - entity: sensor.thuis_ventilatie_extract_air_temperature
+            color: green
+          - type: tile
+            entity: sensor.thuis_ventilatie_extract_air_temperature
             name: Afvoerlucht
-          - entity: sensor.thuis_ventilatie_exhaust_air_temperature
+            color: orange
+          - type: tile
+            entity: sensor.thuis_ventilatie_exhaust_air_temperature
             name: Uitblaaslucht
+            color: red
       - type: custom:apexcharts-card
         header:
           show: true
