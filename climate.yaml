@@ -39,7 +39,14 @@ views:
             max: 100
         series:
           - entity: sensor.node_2_luchtvochtigheid
-            name: Luchtvochtigheid
+            name: Binnen
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+          - entity: sensor.sluisparkhumidity
+            name: Buiten
             curve: smooth
             stroke_width: 1.5
             group_by:

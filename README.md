@@ -60,16 +60,6 @@ The basic idea is as follows:
       sudo systemctl start nginx
    ```
 
-3. This can also be triggered from within HA itself (button on the dashboard) via `shell_command.renew_certificate`, which runs [renew_certificate.sh](renew_certificate.sh). Similarly, `shell_command.git_pull_config` (button "Git pull config") pulls the latest config changes from git so you can edit remotely without SSH-ing into the Pi.
-
-   For these to work, the user running Home Assistant (e.g. `homeassistant`) needs **passwordless sudo** for only the exact commands used, nothing more. Find the exact paths first (`which systemctl`, `which certbot`), then create `/etc/sudoers.d/homeassistant-hass` with `sudo visudo -f /etc/sudoers.d/homeassistant-hass`:
-   ```
-      homeassistant ALL=(root) NOPASSWD: /usr/bin/systemctl stop nginx, /usr/bin/systemctl start nginx, /usr/bin/certbot renew --cert-name sveneniris.duckdns.org --preferred-challenges http-01
-   ```
-   Also make the script executable: `chmod +x renew_certificate.sh`. Verify the `shell_command` paths in `configuration.yaml` match the actual config directory on the Pi (`/home/homeassistant/.homeassistant` is a placeholder).
-
-   ⚠️ Anyone who can trigger scripts/buttons in your HA frontend can run these commands, so keep this restricted to trusted/admin users and don't widen the sudoers rule beyond the exact commands listed.
-
 ### Create service
 https://community.home-assistant.io/t/autostart-using-systemd/199497
 
@@ -85,3 +75,22 @@ Do not use this. There is support for this in HA.
 ```
 UPDATE "main"."statistics" SET "sum" = "sum" - 360.501  WHERE "metadata_id" = 105 AND "sum" > 400
 ```
+
+## Upgrading 
+
+I spent some time to upgrade HA from our original version (2023.7.2) to the latest 2026 version. To do so, we also needed a newer python. 
+
+To easiest way to upgrade python was to use `uv`
+
+```
+   uv python install 3.14
+   uv venv --python 3.14 py3.14
+```
+
+then we could install homeassistant 
+
+```
+   uv pip install homeassistant
+```
+
+Most things could be upgraded without problems. One problem was however our patched `goodwe` integration. 

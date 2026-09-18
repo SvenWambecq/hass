@@ -258,9 +258,6 @@ sensor:
     round: 2
     method: left
 
-  - platform: leuven_template
-    url: "REPLACE_WITH_YOUR_WEATHER_STATION_XML_URL"
-    prefix: "lt_"
 
   - name: "Battery Out [kWh]"
     platform: integration
