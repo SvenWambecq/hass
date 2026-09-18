@@ -1,0 +1,119 @@
+title: Klimaat
+resources:
+  - url: /local/apexcharts-card.js
+    type: module
+  - url: /local/mini-graph-card-bundle.js
+    type: module
+views:
+  - path: default_view
+    title: Ventilatie
+    subview: false
+    type: sidebar
+    badges: []
+    cards:
+      - type: fan
+        entity: fan.thuis_ventilatie
+        name: Ventilatie
+      - type: entities
+        title: Bediening
+        entities:
+          - entity: select.thuis_ventilatie_ventilation_state
+            name: Ventilatiestand
+          - entity: sensor.thuis_ventilatie_ventilatiestatus
+            name: Status
+          - entity: sensor.thuis_ventilatie_state_end_time
+            name: Status eindtijd
+          - entity: sensor.thuis_ventilatie_target_flow_level
+            name: Doeldebiet
+      - type: glance
+        title: Temperaturen
+        show_state: true
+        show_name: true
+        entities:
+          - entity: sensor.thuis_ventilatie_outdoor_air_temperature
+            name: Buitenlucht
+          - entity: sensor.thuis_ventilatie_supply_air_temperature
+            name: Toevoerlucht
+          - entity: sensor.thuis_ventilatie_extract_air_temperature
+            name: Afvoerlucht
+          - entity: sensor.thuis_ventilatie_exhaust_air_temperature
+            name: Uitblaaslucht
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Luchttemperaturen
+        graph_span: 24h
+        update_interval: 5min
+        apex_config:
+          chart:
+            zoom:
+              enabled: true
+              type: x
+              autoScaleYaxis: true
+            toolbar:
+              show: true
+              tools:
+                selection: true
+                zoom: true
+                zoomin: true
+                zoomout: true
+                pan: true
+                reset: true
+        yaxis:
+          - decimals: 1
+        series:
+          - entity: sensor.thuis_ventilatie_outdoor_air_temperature
+            name: Buitenlucht
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+          - entity: sensor.thuis_ventilatie_supply_air_temperature
+            name: Toevoerlucht
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+          - entity: sensor.thuis_ventilatie_extract_air_temperature
+            name: Afvoerlucht
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+          - entity: sensor.thuis_ventilatie_exhaust_air_temperature
+            name: Uitblaaslucht
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+      - type: horizontal-stack
+        cards:
+          - type: gauge
+            entity: sensor.thuis_ventilatie_target_flow_level
+            name: Doeldebiet
+            unit: "%"
+            min: 0
+            max: 100
+            severity:
+              green: 0
+              yellow: 60
+              red: 90
+          - type: gauge
+            entity: sensor.thuis_ventilatie_filter_remaining
+            name: Filter resterend
+            unit: d
+            min: 0
+            max: 365
+            severity:
+              red: 0
+              yellow: 30
+              green: 60
+      - type: entities
+        title: Luchtvochtigheid
+        entities:
+          - entity: sensor.node_2_luchtvochtigheid
+            name: Luchtvochtigheid

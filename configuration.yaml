@@ -74,6 +74,13 @@ lovelace:
       show_in_sidebar: false
       require_admin: true
       filename: admin.yaml
+    climate-dashboard:
+      mode: yaml
+      title: Klimaat
+      icon: mdi:fan
+      show_in_sidebar: true
+      require_admin: false
+      filename: climate.yaml
 
 # duckdns:
 #   domain: sveneniris
