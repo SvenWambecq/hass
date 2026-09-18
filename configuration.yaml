@@ -285,6 +285,9 @@ sensor:
     source: sensor.grid_power_in
     round: 2
     method: left
-
+    
+  - platform: leuven_template
+    url: "https://weer.sluispark.be/yowindowRT.php"
+    prefix: "sluispark"
 
 
