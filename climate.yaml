@@ -11,9 +11,11 @@ views:
     type: sidebar
     badges: []
     cards:
-      - type: fan
+      - type: tile
         entity: fan.thuis_ventilatie
         name: Ventilatie
+        features:
+          - type: fan-preset-modes
       - type: entities
         title: Bediening
         entities:
@@ -25,6 +27,24 @@ views:
             name: Status eindtijd
           - entity: sensor.thuis_ventilatie_target_flow_level
             name: Doeldebiet
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Luchtvochtigheid
+        graph_span: 24h
+        update_interval: 5min
+        yaxis:
+          - decimals: 0
+            min: 0
+            max: 100
+        series:
+          - entity: sensor.node_2_luchtvochtigheid
+            name: Luchtvochtigheid
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
       - type: glance
         title: Temperaturen
         show_state: true

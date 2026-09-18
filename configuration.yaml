@@ -76,7 +76,7 @@ lovelace:
       filename: admin.yaml
     climate-dashboard:
       mode: yaml
-      title: Klimaat
+      title: Ventilatie
       icon: mdi:fan
       show_in_sidebar: true
       require_admin: false
@@ -257,6 +257,10 @@ sensor:
     source: sensor.battery_power_in
     round: 2
     method: left
+
+  - platform: leuven_template
+    url: "REPLACE_WITH_YOUR_WEATHER_STATION_XML_URL"
+    prefix: "lt_"
 
   - name: "Battery Out [kWh]"
     platform: integration
