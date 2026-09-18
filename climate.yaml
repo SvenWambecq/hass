@@ -99,6 +99,7 @@ views:
         series:
           - entity: sensor.thuis_ventilatie_outdoor_air_temperature
             name: Buitenlucht
+            color: blue
             curve: smooth
             stroke_width: 1.5
             group_by:
@@ -106,6 +107,7 @@ views:
               duration: 5min
           - entity: sensor.thuis_ventilatie_supply_air_temperature
             name: Toevoerlucht
+            color: green
             curve: smooth
             stroke_width: 1.5
             group_by:
@@ -113,6 +115,7 @@ views:
               duration: 5min
           - entity: sensor.thuis_ventilatie_extract_air_temperature
             name: Afvoerlucht
+            color: orange
             curve: smooth
             stroke_width: 1.5
             group_by:
@@ -120,6 +123,7 @@ views:
               duration: 5min
           - entity: sensor.thuis_ventilatie_exhaust_air_temperature
             name: Uitblaaslucht
+            color: red
             curve: smooth
             stroke_width: 1.5
             group_by:
