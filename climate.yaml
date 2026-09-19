@@ -30,8 +30,8 @@ views:
       - type: custom:apexcharts-card
         header:
           show: true
-          title: Luchtvochtigheid vandaag
-        graph_span: 24h
+          title: Luchtvochtigheid
+        graph_span: 48h
         span:
           start: day
         update_interval: 5min
