@@ -115,35 +115,6 @@ views:
         link_dashboard: true
       - type: energy-usage-graph
       - type: custom:apexcharts-card
-        experimental:
-          color_threshold: true
-        header:
-          show: true
-          title: Maandelijkse piek
-        graph_span: 2y
-        update_interval: 1h
-        yaxis:
-          - min: 0
-            decimals: 1
-        apex_config:
-          chart:
-            toolbar:
-              show: false
-        series:
-          - entity: sensor.current_average_demand
-            name: Maandelijkse piek
-            type: column
-            statistics:
-              type: max
-              period: month
-            color_threshold:
-              - value: 0
-                color: "#00a000"
-              - value: 2
-                color: "#FFA500"
-              - value: 2.5
-                color: "#f00000"
-      - type: custom:apexcharts-card
         header:
           show: true
           title: Dagelijkse piek
@@ -178,6 +149,35 @@ views:
               period: day
             show:
               in_brush: true
+            color_threshold:
+              - value: 0
+                color: "#00a000"
+              - value: 2
+                color: "#FFA500"
+              - value: 2.5
+                color: "#f00000"
+      - type: custom:apexcharts-card
+        experimental:
+          color_threshold: true
+        header:
+          show: true
+          title: Maandelijkse piek
+        graph_span: 2y
+        update_interval: 1h
+        yaxis:
+          - min: 0
+            decimals: 1
+        apex_config:
+          chart:
+            toolbar:
+              show: false
+        series:
+          - entity: sensor.current_average_demand
+            name: Maandelijkse piek
+            type: column
+            statistics:
+              type: max
+              period: month
             color_threshold:
               - value: 0
                 color: "#00a000"
