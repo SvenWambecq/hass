@@ -30,9 +30,9 @@ views:
       - type: custom:apexcharts-card
         header:
           show: true
-          title: Luchtvochtigheid
-        graph_span: 24h
-        update_interval: 5min
+          title: Dagelijkse gemiddelde luchtvochtigheid
+        graph_span: 90d
+        update_interval: 1h
         yaxis:
           - decimals: 0
             min: 0
@@ -40,18 +40,14 @@ views:
         series:
           - entity: sensor.node_2_luchtvochtigheid
             name: Binnen
-            curve: smooth
-            stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
+            statistics:
+              type: mean
+              period: day
           - entity: sensor.sluisparkhumidity
             name: Buiten
-            curve: smooth
-            stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
+            statistics:
+              type: mean
+              period: day
       - type: grid
         title: Temperaturen
         columns: 4
