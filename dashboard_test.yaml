@@ -119,9 +119,9 @@ views:
           color_threshold: true
         header:
           show: true
-          title: Kwartierverbuik
-        graph_span: 24h
-        update_interval: 15min
+          title: Maandelijkse piek
+        graph_span: 2y
+        update_interval: 1h
         yaxis:
           - min: 0
             decimals: 1
@@ -131,11 +131,11 @@ views:
               show: false
         series:
           - entity: sensor.current_average_demand
-            name: Kwartierverbuik
+            name: Maandelijkse piek
             type: column
-            group_by:
-              func: max
-              duration: 15min
+            statistics:
+              type: max
+              period: month
             color_threshold:
               - value: 0
                 color: "#00a000"
@@ -143,15 +143,6 @@ views:
                 color: "#FFA500"
               - value: 2.5
                 color: "#f00000"
-          - entity: input_number.demand_peak_current_month
-            name: Piek huidige maand
-            type: line
-            curve: stepline
-            color: "#f00000"
-            stroke_width: 2
-            group_by:
-              func: last
-              duration: 15min
       - type: custom:apexcharts-card
         header:
           show: true
