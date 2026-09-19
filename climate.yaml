@@ -43,7 +43,7 @@ views:
             statistics:
               type: mean
               period: day
-          - entity: sensor.sluisparkhumidity
+          - entity: sensor.sluispark_humidity_statistics
             name: Buiten
             statistics:
               type: mean
