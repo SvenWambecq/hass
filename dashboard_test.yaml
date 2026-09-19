@@ -147,13 +147,10 @@ views:
         header:
           show: true
           title: Dagelijkse piek
-        graph_span: 2y
+        graph_span: 90d
         update_interval: 1h
         experimental:
           color_threshold: true
-          brush: true
-        brush:
-          selection_span: 90d
         yaxis:
           - min: 0
             decimals: 1
