@@ -11,6 +11,13 @@ views:
     type: sidebar
     badges: []
     cards:
+      - type: weather-forecast
+        entity: weather.leuven
+        name: Leuven vandaag
+        show_current: true
+        show_forecast: true
+        forecast_type: hourly
+        forecast_slots: 10
       - type: tile
         entity: fan.thuis_ventilatie
         name: Ventilatie
