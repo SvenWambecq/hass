@@ -66,16 +66,10 @@ views:
             name: Binnen
             curve: smooth
             stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
           - entity: sensor.outdoor_absolute_humidity
             name: Buiten
             curve: smooth
             stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
       - type: custom:apexcharts-card
         header:
           show: true
