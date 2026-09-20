@@ -39,7 +39,6 @@ views:
           show: true
           title: Luchtvochtigheid
         graph_span: 48h
-        update_interval: 5min
         yaxis:
           - decimals: 0
             min: 0
@@ -49,16 +48,10 @@ views:
             name: Binnen
             curve: smooth
             stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
           - entity: sensor.sluispark_humidity_statistics
             name: Buiten
             curve: smooth
             stroke_width: 1.5
-            group_by:
-              func: avg
-              duration: 5min
       - type: custom:apexcharts-card
         header:
           show: true
