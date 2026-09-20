@@ -27,11 +27,25 @@ views:
             name: Status eindtijd
           - entity: sensor.thuis_ventilatie_target_flow_level
             name: Doeldebiet
-      - type: custom:apexcharts-card
+      - type: grid
+        title: Luchtvochtigheid
+        columns: 3
+        square: false
+        cards:
+          - type: tile
+            entity: sensor.node_2_luchtvochtigheid
+            name: Luchtvochtigheid binnen
+          - type: tile
+            entity: sensor.sluispark_humidity_statistics
+            name: Luchtvochtigheid buiten
+          - type: tile
+            entity: sensor.ideal_indoor_relative_humidity
+            name: Minimum bereikbaar
+            - type: custom:apexcharts-card
         header:
           show: true
           title: Luchtvochtigheid
-        graph_span: 48h
+        graph_span: 24h
         yaxis:
           - decimals: 0
             min: 0
@@ -148,17 +162,6 @@ views:
               red: 0
               yellow: 30
               green: 60
-      - type: entities
-        title: Luchtvochtigheid
-        entities:
-          - entity: sensor.node_2_luchtvochtigheid
-            name: Luchtvochtigheid
-          - entity: sensor.indoor_absolute_humidity
-            name: Absoluut binnen
-          - entity: sensor.outdoor_absolute_humidity
-            name: Absoluut buiten
-          - entity: sensor.ideal_indoor_relative_humidity
-            name: Minimum bereikbaar
       - type: custom:apexcharts-card
         header:
           show: true
