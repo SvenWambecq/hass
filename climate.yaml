@@ -35,12 +35,15 @@ views:
           - type: tile
             entity: sensor.node_2_luchtvochtigheid
             name: Luchtvochtigheid binnen
+            color: orange
           - type: tile
             entity: sensor.sluispark_humidity_statistics
             name: Luchtvochtigheid buiten
+            color: blue
           - type: tile
             entity: sensor.ideal_indoor_relative_humidity
             name: Minimum bereikbaar
+            color: red
       - type: custom:apexcharts-card
         header:
           show: true
@@ -54,14 +57,17 @@ views:
           - entity: sensor.node_2_luchtvochtigheid
             name: Binnen
             curve: smooth
+            color: orange
             stroke_width: 1.5
           - entity: sensor.sluispark_humidity_statistics
             name: Buiten
             curve: smooth
+            color: blue
             stroke_width: 1.5
           - entity: sensor.ideal_indoor_relative_humidity
             name: Ideaal binnen (buitenlucht)
             curve: smooth
+            color: red
             stroke_width: 1.5
       - type: grid
         title: Temperaturen
