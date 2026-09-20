@@ -52,6 +52,10 @@ views:
             name: Buiten
             curve: smooth
             stroke_width: 1.5
+          - entity: sensor.ideal_indoor_relative_humidity
+            name: Ideaal binnen (buitenlucht)
+            curve: smooth
+            stroke_width: 1.5
       - type: custom:apexcharts-card
         header:
           show: true

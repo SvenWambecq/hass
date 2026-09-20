@@ -152,6 +152,29 @@ template:
           {{ (2.1674 * saturation_vapor_pressure * humidity / 100 /
               (temperature + 273.15)) | round(2) }}
 
+        - name: "Ideal indoor relative humidity"
+          unique_id: ideal_indoor_relative_humidity
+          default_entity_id: sensor.ideal_indoor_relative_humidity
+          unit_of_measurement: "%"
+          device_class: humidity
+          state_class: measurement
+          availability: >-
+           {{ is_number(states('sensor.thuis_ventilatie_extract_air_temperature')) and
+             is_number(states('sensor.thuis_ventilatie_outdoor_air_temperature')) and
+             is_number(states('sensor.sluispark_humidity_statistics')) }}
+          state: >-
+           {% set indoor_temperature = states('sensor.thuis_ventilatie_extract_air_temperature') | float %}
+           {% set outdoor_temperature = states('sensor.thuis_ventilatie_outdoor_air_temperature') | float %}
+           {% set outdoor_humidity = states('sensor.sluispark_humidity_statistics') | float %}
+           {% set outdoor_saturation_pressure = 6.112 *
+             (2.718281828459045 ** ((17.67 * outdoor_temperature) /
+             (outdoor_temperature + 243.5))) %}
+           {% set indoor_saturation_pressure = 6.112 *
+             (2.718281828459045 ** ((17.67 * indoor_temperature) /
+             (indoor_temperature + 243.5))) %}
+           {{ (outdoor_saturation_pressure * outdoor_humidity /
+              indoor_saturation_pressure) | round(1) }}
+
       - name: "Battery Power In"
         unique_id: battery_power_in
         unit_of_measurement: "kW"

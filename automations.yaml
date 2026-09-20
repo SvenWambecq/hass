@@ -72,7 +72,7 @@
       entity_id: select.thuis_ventilatie_ventilation_state
   condition:
     - condition: template
-      value_template: "{{ trigger.to_state.context.user_id is not none }}"
+      value_template: "{{ trigger.to_state.context.parent_id is none }}"
   action:
     - service: input_select.select_option
       target:
