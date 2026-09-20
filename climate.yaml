@@ -41,7 +41,7 @@ views:
           - type: tile
             entity: sensor.ideal_indoor_relative_humidity
             name: Minimum bereikbaar
-            - type: custom:apexcharts-card
+      - type: custom:apexcharts-card
         header:
           show: true
           title: Luchtvochtigheid
