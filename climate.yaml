@@ -39,8 +39,6 @@ views:
           show: true
           title: Luchtvochtigheid
         graph_span: 48h
-        span:
-          start: day
         update_interval: 5min
         yaxis:
           - decimals: 0
