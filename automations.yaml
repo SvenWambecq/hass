@@ -19,6 +19,68 @@
         value: "{{ trigger.to_state.state | float(0) }}"
   mode: queued
 
+- alias: Duco reduce humid night boost
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.thuis_ventilatie_target_flow_level
+      above: 80
+      for: "00:15:00"
+  condition:
+    - condition: time
+      after: "22:30:00"
+      before: "07:00:00"
+    - condition: numeric_state
+      entity_id: sensor.node_2_luchtvochtigheid
+      above: 65
+    - condition: template
+      value_template: >-
+        {{ states('sensor.outdoor_absolute_humidity') | float(0) >=
+           states('sensor.indoor_absolute_humidity') | float(0) }}
+  action:
+    - service: select.select_option
+      target:
+        entity_id: select.thuis_ventilatie_ventilation_state
+      data:
+        option: CNT1
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.ventilation_mode_reason
+      data:
+        option: High humidity
+  mode: single
+
+- alias: Duco return to automatic mode
+  trigger:
+    - platform: time
+      at: "07:00:00"
+  action:
+    - service: select.select_option
+      target:
+        entity_id: select.thuis_ventilatie_ventilation_state
+      data:
+        option: AUTO
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.ventilation_mode_reason
+      data:
+        option: auto
+  mode: single
+
+- alias: Record manual Duco mode selection
+  trigger:
+    - platform: state
+      entity_id: select.thuis_ventilatie_ventilation_state
+  condition:
+    - condition: template
+      value_template: "{{ trigger.to_state.context.user_id is not none }}"
+  action:
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.ventilation_mode_reason
+      data:
+        option: Manual
+  mode: queued
+
 - alias: Roll demand peaks at month start
   trigger:
     - platform: time

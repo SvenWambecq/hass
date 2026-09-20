@@ -62,6 +62,30 @@ views:
       - type: custom:apexcharts-card
         header:
           show: true
+          title: Absolute luchtvochtigheid
+        graph_span: 48h
+        update_interval: 5min
+        yaxis:
+          - decimals: 1
+            min: 0
+        series:
+          - entity: sensor.indoor_absolute_humidity
+            name: Binnen
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+          - entity: sensor.outdoor_absolute_humidity
+            name: Buiten
+            curve: smooth
+            stroke_width: 1.5
+            group_by:
+              func: avg
+              duration: 5min
+      - type: custom:apexcharts-card
+        header:
+          show: true
           title: Dagelijkse gemiddelde luchtvochtigheid
         graph_span: 90d
         update_interval: 1h
@@ -184,3 +208,37 @@ views:
         entities:
           - entity: sensor.node_2_luchtvochtigheid
             name: Luchtvochtigheid
+          - entity: sensor.indoor_absolute_humidity
+            name: Absoluut binnen
+          - entity: sensor.outdoor_absolute_humidity
+            name: Absoluut buiten
+      - type: custom:apexcharts-card
+        header:
+          show: true
+          title: Doeldebiet
+        graph_span: 48h
+        update_interval: 5min
+        yaxis:
+          - decimals: 0
+            min: 0
+            max: 100
+        series:
+          - entity: sensor.thuis_ventilatie_target_flow_level
+            name: Doeldebiet
+            curve: smooth
+            stroke_width: 2
+            group_by:
+              func: avg
+              duration: 5min
+      - type: history-graph
+        title: Geselecteerde ventilatiestand
+        hours_to_show: 48
+        entities:
+          - entity: sensor.thuis_ventilatie_ventilatiestatus
+            name: Stand
+      - type: history-graph
+        title: Reden ventilatiestand
+        hours_to_show: 48
+        entities:
+          - entity: input_select.ventilation_mode_reason
+            name: Reden
