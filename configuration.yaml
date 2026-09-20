@@ -123,9 +123,6 @@ template:
         default_entity_id: sensor.indoor_absolute_humidity
         unit_of_measurement: "g/m³"
         state_class: measurement
-        availability: >-
-          {{ is_number(states('sensor.thuis_ventilatie_extract_air_temperature')) and
-             is_number(states('sensor.node_2_luchtvochtigheid')) }}
         state: >-
           {% set temperature = states('sensor.thuis_ventilatie_extract_air_temperature') | float %}
           {% set humidity = states('sensor.node_2_luchtvochtigheid') | float %}
@@ -139,12 +136,9 @@ template:
         default_entity_id: sensor.outdoor_absolute_humidity
         unit_of_measurement: "g/m³"
         state_class: measurement
-        availability: >-
-          {{ is_number(states('sensor.thuis_ventilatie_outdoor_air_temperature')) and
-             is_number(states('sensor.sluispark_humidity_statistics')) }}
         state: >-
           {% set temperature = states('sensor.thuis_ventilatie_outdoor_air_temperature') | float %}
-          {% set humidity = states('sensor.sluispark_humidity_statistics') | float %}
+          {% set humidity = states('sensor.sluispark_humidity') | float %}
           {% set saturation_vapor_pressure = 6.112 *
              (((17.67 * temperature) / (temperature + 243.5)) | exp) %}
           {{ (2.1674 * saturation_vapor_pressure * humidity / 100 /
