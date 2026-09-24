@@ -53,6 +53,14 @@
   trigger:
     - platform: time
       at: "07:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
   action:
     - service: select.select_option
       target:
