@@ -115,6 +115,45 @@ views:
         link_dashboard: true
       - type: energy-usage-graph
       - type: custom:apexcharts-card
+        experimental:
+          color_threshold: true
+        header:
+          show: true
+          title: Kwartierverbuik
+        graph_span: 48h
+        update_interval: 15min
+        yaxis:
+          - min: 0
+            decimals: 1
+        apex_config:
+          chart:
+            toolbar:
+              show: false
+        series:
+          - entity: sensor.current_average_demand
+            name: Kwartierverbuik
+            type: column
+            float_precision: 3
+            group_by:
+              func: max
+              duration: 15min
+            color_threshold:
+              - value: 0
+                color: "#00a000"
+              - value: 2
+                color: "#FFA500"
+              - value: 2.5
+                color: "#f00000"
+          - entity: input_number.demand_peak_current_month
+            name: Piek huidige maand
+            type: line
+            curve: stepline
+            color: "#f00000"
+            stroke_width: 2
+            group_by:
+              func: last
+              duration: 15min
+      - type: custom:apexcharts-card
         header:
           show: true
           title: Dagelijkse piek
@@ -156,44 +195,6 @@ views:
                 color: "#FFA500"
               - value: 2.5
                 color: "#f00000"
-      - type: custom:apexcharts-card
-        experimental:
-          color_threshold: true
-        header:
-          show: true
-          title: Kwartierverbuik
-        graph_span: 48h
-        update_interval: 15min
-        yaxis:
-          - min: 0
-            decimals: 1
-        apex_config:
-          chart:
-            toolbar:
-              show: false
-        series:
-          - entity: sensor.current_average_demand
-            name: Kwartierverbuik
-            type: column
-            group_by:
-              func: max
-              duration: 15min
-            color_threshold:
-              - value: 0
-                color: "#00a000"
-              - value: 2
-                color: "#FFA500"
-              - value: 2.5
-                color: "#f00000"
-          - entity: input_number.demand_peak_current_month
-            name: Piek huidige maand
-            type: line
-            curve: stepline
-            color: "#f00000"
-            stroke_width: 2
-            group_by:
-              func: last
-              duration: 15min
       - type: custom:apexcharts-card
         experimental:
           color_threshold: true
