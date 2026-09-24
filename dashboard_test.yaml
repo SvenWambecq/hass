@@ -124,7 +124,8 @@ views:
         update_interval: 15min
         yaxis:
           - min: 0
-            decimals: 1
+            max: 5
+            decimals: 2
         apex_config:
           chart:
             toolbar:
@@ -163,7 +164,8 @@ views:
           color_threshold: true
         yaxis:
           - min: 0
-            decimals: 1
+            max: 5
+            decimals: 2
         apex_config:
           chart:
             zoom:
@@ -205,7 +207,8 @@ views:
         update_interval: 1h
         yaxis:
           - min: 0
-            decimals: 1
+            max: 5
+            decimals: 2 
         apex_config:
           chart:
             toolbar:
