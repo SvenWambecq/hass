@@ -1,17 +1,12 @@
 from dsmr_parser import telegram_specifications
 from dsmr_parser.clients import SerialReader, SERIAL_SETTINGS_V5
+import logging
+import time
 
 
 SPECIFICATION = telegram_specifications.BELGIUM_FLUVIUS
 
-serial_reader = SerialReader(
-    device='/dev/ttyUSB0',
-    serial_settings=SERIAL_SETTINGS_V5,
-    telegram_specification=SPECIFICATION
-)
-
 from requests import post
-import time
 
 SENSORS = {
     "water_meter": {
@@ -66,21 +61,31 @@ BASE_URL = "http://localhost:8123/api/states/sensor.{sensor}"
 TOKEN = "TOKEN"
 HEADER = {"Authorization": f"Bearer {TOKEN}",  "content-type": "application/json"}
 
-for telegram in serial_reader.read():
-    #print(telegram)
-    for sensor, d in SENSORS.items():
-        measurement = getattr(telegram, d["id"])
-        data = {
-            "state": str(measurement.value), 
-            "attributes": {
-                "unit_of_measurement":  dimension(measurement.unit), 
-                "device_class": d["device_class"], 
-                "state_class": d["state_class"]
-            }
-        }
-        url = BASE_URL.format(sensor=sensor)
-        try: 
-            response = post(url, headers=HEADER, json=data)
-            print(response.text)
-        except Exception:
-            pass
+while True:
+    serial_reader = SerialReader(
+        device='/dev/ttyUSB0',
+        serial_settings=SERIAL_SETTINGS_V5,
+        telegram_specification=SPECIFICATION
+    )
+    try:
+        for telegram in serial_reader.read():
+            #print(telegram)
+            for sensor, d in SENSORS.items():
+                measurement = getattr(telegram, d["id"])
+                data = {
+                    "state": str(measurement.value),
+                    "attributes": {
+                        "unit_of_measurement": dimension(measurement.unit),
+                        "device_class": d["device_class"],
+                        "state_class": d["state_class"]
+                    }
+                }
+                url = BASE_URL.format(sensor=sensor)
+                try:
+                    response = post(url, headers=HEADER, json=data)
+                    print(response.text)
+                except Exception:
+                    pass
+    except ValueError as exc:
+        logging.warning("Serial reader failed to parse telegram: %s; reopening", exc)
+        time.sleep(5)
