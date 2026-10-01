@@ -99,6 +99,50 @@ views:
             group_by:
               func: avg
               duration: 5min
+      - type: custom:plotly-graph
+        title: Power (Plotly)
+        hours_to_show: 24
+        refresh_interval: 120
+        entities:
+          - entity: sensor.pv_power
+            name: PV
+            yaxis: y
+          - entity: sensor.battery_power
+            name: Battery
+            yaxis: y
+          - entity: sensor.on_grid_export_power
+            name: Grid
+            yaxis: y
+          - entity: sensor.house_consumption
+            name: Consumption
+            yaxis: y
+          - entity: sensor.battery_state_of_charge
+            name: SoC
+            yaxis: y2
+        layout:
+          height: 360
+          dragmode: zoom
+          xaxis:
+            rangeselector:
+              buttons:
+                - count: 1
+                  label: 1h
+                  step: hour
+                  stepmode: backward
+                - count: 6
+                  label: 6h
+                  step: hour
+                  stepmode: backward
+                - count: 1
+                  label: 24h
+                  step: day
+                  stepmode: backward
+          yaxis:
+            range: [-3000, 6000]
+          yaxis2:
+            overlaying: y
+            side: right
+            range: [0, 100]
       - type: gauge
         entity: sensor.current_average_demand
         name: Capaciteit
