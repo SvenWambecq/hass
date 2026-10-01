@@ -172,7 +172,7 @@ views:
         header:
           show: true
           title: Doeldebiet
-        graph_span: 48h
+        graph_span: 24h
         update_interval: 5min
         yaxis:
           - decimals: 0
@@ -188,13 +188,13 @@ views:
               duration: 5min
       - type: history-graph
         title: Geselecteerde ventilatiestand
-        hours_to_show: 48
+        hours_to_show: 24
         entities:
           - entity: sensor.thuis_ventilatie_ventilatiestatus
             name: Stand
       - type: history-graph
         title: Reden ventilatiestand
-        hours_to_show: 48
+        hours_to_show: 24
         entities:
           - entity: input_select.ventilation_mode_reason
             name: Reden
