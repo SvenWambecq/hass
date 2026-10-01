@@ -124,7 +124,7 @@ views:
             yaxis: y2
         layout:
           height: 360
-          dragmode: false
+          dragmode: zoom
           xaxis:
             rangeselector:
               buttons:
@@ -142,10 +142,12 @@ views:
                   stepmode: backward
           yaxis:
             range: [-3000, 6000]
+            fixedrange: true
           yaxis2:
             overlaying: y
             side: right
             range: [0, 100]
+            fixedrange: true
       - type: gauge
         entity: sensor.current_average_demand
         name: Capaciteit
