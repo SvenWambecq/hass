@@ -124,7 +124,7 @@ views:
             yaxis: y2
         layout:
           height: 360
-          dragmode: zoom
+          dragmode: pan
           xaxis:
             rangeselector:
               buttons:
