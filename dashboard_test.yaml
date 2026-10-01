@@ -132,8 +132,16 @@ views:
                   label: 1h
                   step: hour
                   stepmode: backward
+                - count: 3
+                  label: 3h
+                  step: hour
+                  stepmode: backward
                 - count: 6
                   label: 6h
+                  step: hour
+                  stepmode: backward
+                - count: 12
+                  label: 12h
                   step: hour
                   stepmode: backward
                 - count: 1
