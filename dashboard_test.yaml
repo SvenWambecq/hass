@@ -103,6 +103,9 @@ views:
         title: Power (Plotly)
         hours_to_show: 24
         refresh_interval: 120
+        disable_pinch_to_zoom: true
+        config:
+          scrollZoom: false
         entities:
           - entity: sensor.pv_power
             name: PV
@@ -121,7 +124,7 @@ views:
             yaxis: y2
         layout:
           height: 360
-          dragmode: zoom
+          dragmode: false
           xaxis:
             rangeselector:
               buttons:
