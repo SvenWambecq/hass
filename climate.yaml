@@ -80,7 +80,7 @@ views:
             stroke_width: 1.5
       - type: grid
         title: Temperaturen
-        columns: 4
+        columns: 1
         square: false
         cards:
           - type: tile
