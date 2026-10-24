@@ -59,6 +59,11 @@ views:
             curve: smooth
             color: orange
             stroke_width: 1.5
+          - entity: sensor.node_3_luchtvochtigheid
+            name: Badkamer
+            curve: smooth
+            color: green
+            stroke_width: 1.5
           - entity: sensor.sluispark_humidity_statistics
             name: Buiten
             curve: smooth
