@@ -37,6 +37,10 @@ views:
             name: Luchtvochtigheid binnen
             color: orange
           - type: tile
+            entity: sensor.node_3_luchtvochtigheid
+            name: Luchtvochtigheid badkamer
+            color: green
+          - type: tile
             entity: sensor.sluispark_humidity_statistics
             name: Luchtvochtigheid buiten
             color: blue
