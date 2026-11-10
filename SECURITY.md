@@ -79,7 +79,7 @@ add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
 
 ### 4. Reverse Proxy Hardening ✅
 
-**Status:** Partially configured
+**Status:** Fully configured
 
 Nginx forwards requests to Home Assistant on `127.0.0.1:8123` with proper headers:
 
@@ -98,7 +98,28 @@ location / {
 - ✅ Client IP logging
 - ✅ Protocol awareness in backend
 - ✅ Host header validation
-- ⚠️ Missing: Additional security headers (CSP, X-Frame-Options, etc.)
+
+### 4b. Security Headers ✅
+
+**Status:** Enabled
+
+The following security headers are configured:
+
+```nginx
+add_header Strict-Transport-Security "max-age=31536000; includeSubdomains" always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-XSS-Protection "1; mode=block" always;
+add_header Referrer-Policy "no-referrer-when-downgrade" always;
+add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ..." always;
+```
+
+**What it protects:**
+- ✅ Clickjacking attacks (X-Frame-Options)
+- ✅ MIME type sniffing (X-Content-Type-Options)
+- ✅ Cross-site scripting (CSP)
+- ✅ XSS attacks (X-XSS-Protection)
+- ✅ Referrer leaking (Referrer-Policy)
 
 ### 5. Multi-Factor Authentication (MFA) ✅
 
@@ -108,7 +129,7 @@ See: [Home Assistant MFA Settings](https://www.home-assistant.io/docs/authentica
 
 **What it protects:** Even if password is compromised, attackers cannot access HA without a second factor.
 
-### 6. Firewall/Network Access ✅
+### 7. Firewall/Network Access ✅
 
 **Status:** Modem firewall enabled
 
@@ -118,50 +139,44 @@ See: [Home Assistant MFA Settings](https://www.home-assistant.io/docs/authentica
 
 **What it protects:** Limits attack surface to just the nginx reverse proxy.
 
-## Security Gaps
+### 8. Rate Limiting ✅
 
-### ⚠️ Missing Security Headers
+**Status:** Enabled with safe limits
 
-The following headers would improve security but are not currently configured:
+Rate limiting protects against brute-force login attacks and DDoS:
 
 ```nginx
-# Prevent clickjacking attacks
-add_header X-Frame-Options "SAMEORIGIN";
-
-# Prevent MIME type sniffing
-add_header X-Content-Type-Options "nosniff";
-
-# XSS protection (browser-level)
-add_header X-XSS-Protection "1; mode=block";
-
-# Content Security Policy (restrict script sources)
-add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval';";
-
-# Referrer policy
-add_header Referrer-Policy "no-referrer-when-downgrade";
-```
-
-**Impact:** Low - mainly protects against browser-based attacks. HA API clients may not enforce these.
-
-### ❌ No Rate Limiting
-
-Currently, there is no rate limiting configured on the nginx reverse proxy.
-
-**Risk:** Vulnerable to brute-force login attempts if someone discovers valid usernames.
-
-**Recommended fix:**
-```nginx
+# General traffic: 10 requests per second with burst of 20
 limit_req_zone $binary_remote_addr zone=general:10m rate=10r/s;
 limit_req zone=general burst=20 nodelay;
+
+# Login attempts: 5 requests per minute with burst of 3
+limit_req_zone $binary_remote_addr zone=login:10m rate=5r/m;
+location ~ /auth/login {
+    limit_req zone=login burst=3 nodelay;
+}
 ```
 
-**Impact:** Medium - reduces brute-force risk.
+**What it protects:**
+- ✅ Brute-force login attempts (5 attempts per minute limit on `/auth/login`)
+- ✅ DDoS attacks (10 requests/second general limit)
+- ✅ Resource exhaustion
 
-### ⚠️ TLS 1.2 Minimum (not 1.3 only)
+**Why safe limits?** HA typically makes 5-10 requests per page load, so 10r/s is generous. Login endpoint is stricter (5/min) to prevent credential brute-forcing.
 
-The configuration supports TLS 1.2, which is acceptable but not bleeding-edge.
+## Security Gaps
 
-**Note:** TLS 1.2 is still considered secure and necessary for broader device compatibility.
+None currently identified. All major security measures are in place. ✅
+
+### Optional Future Enhancements
+
+The following improvements are optional but could further harden the setup:
+
+- **Fail2ban integration** - Auto-ban IPs with repeated failed logins
+- **ModSecurity WAF** - Web Application Firewall for additional attack prevention
+- **TLS 1.3 only** - Enforce only TLS 1.3 (reduces compatibility)
+- **OCSP Stapling** - Faster certificate validation
+- **Request size limits** - Prevent buffer overflow attacks
 
 ## Certificate Management
 
@@ -262,18 +277,17 @@ sudo systemctl reload nginx      # Reload without dropping connections
 
 ## Future Improvements
 
-### High Priority:
-- [ ] Add security headers (CSP, X-Frame-Options, etc.)
-- [ ] Implement rate limiting on nginx
-- [ ] Set up log monitoring/alerting
+### Completed ✅:
+- [x] Add security headers (CSP, X-Frame-Options, etc.)
+- [x] Implement rate limiting on nginx
 
-### Medium Priority:
+### Optional Enhancements:
+- [ ] Set up log monitoring/alerting
 - [ ] Enforce TLS 1.3 only (when broader compatibility not needed)
 - [ ] Add ModSecurity WAF rules
+- [ ] Add Fail2ban for automatic IP banning
 - [ ] Implement request size limits
 - [ ] Enable nginx security module features
-
-### Low Priority:
 - [ ] OCSP stapling for certificate validation
 - [ ] Perfect Forward Secrecy tuning
 - [ ] Custom error pages
