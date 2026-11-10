@@ -57,9 +57,11 @@ sudo ./deploy.sh
 
 This script will:
 1. Copy the nginx config to `/etc/nginx/sites-available/`
-2. Create a symlink in `/etc/nginx/sites-enabled/`
+2. Copy the nginx config to `/etc/nginx/sites-enabled/`
 3. Test the configuration
 4. Reload nginx with zero downtime
+
+**Note:** Copies are used instead of symlinks for reliability. This ensures explicit file permissions and avoids broken link issues if git history changes.
 
 ##### Renew certificate
 

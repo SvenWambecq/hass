@@ -25,24 +25,17 @@ if [ ! -f "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" ]; then
 fi
 
 echo "📋 Step 1: Copying config to sites-available..."
-cp "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" "$NGINX_AVAILABLE/$CONFIG_NAME"
+cp -p "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" "$NGINX_AVAILABLE/$CONFIG_NAME"
 echo "✅ Config copied to $NGINX_AVAILABLE/$CONFIG_NAME"
 echo ""
 
-echo "🔗 Step 2: Setting up symlink in sites-enabled..."
-# Remove old file/symlink if it exists
-if [ -e "$NGINX_ENABLED/default" ] || [ -L "$NGINX_ENABLED/default" ]; then
-    rm "$NGINX_ENABLED/default"
-    echo "   Removed old $NGINX_ENABLED/default"
-fi
-
-# Create symlink
-ln -s ../sites-available/$CONFIG_NAME "$NGINX_ENABLED/default"
-echo "✅ Symlink created: $NGINX_ENABLED/default -> ../sites-available/$CONFIG_NAME"
+echo "📋 Step 2: Copying config to sites-enabled..."
+cp -p "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" "$NGINX_ENABLED/$CONFIG_NAME"
+echo "✅ Config copied to $NGINX_ENABLED/$CONFIG_NAME"
 echo ""
 
 echo "🔍 Step 3: Testing nginx configuration..."
-if ! sudo nginx -t 2>&1 | grep -q "successful"; then
+if ! nginx -t 2>&1 | grep -q "successful"; then
     echo "❌ Nginx configuration test failed!"
     exit 1
 fi
@@ -63,6 +56,10 @@ systemctl status nginx --no-pager | head -5
 echo ""
 echo "Configuration details:"
 echo "  Source:  $REPO_DIR/nginx/sites-available/$CONFIG_NAME"
-echo "  Target:  $NGINX_AVAILABLE/$CONFIG_NAME"
-echo "  Enabled: $NGINX_ENABLED/default (symlink)"
+echo "  Deployed to:"
+echo "    - $NGINX_AVAILABLE/$CONFIG_NAME"
+echo "    - $NGINX_ENABLED/$CONFIG_NAME"
 echo ""
+echo "Files are copies (not symlinks) for reliability and simplicity."
+echo ""
+
