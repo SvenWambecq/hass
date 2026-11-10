@@ -24,25 +24,39 @@ if [ ! -f "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" ]; then
     exit 1
 fi
 
-echo "📋 Step 1: Copying config to sites-available..."
+echo "📋 Step 1: Cleaning old configuration files..."
+# Remove old config files to prevent conflicts
+for old_config in default app hass.old hass_old; do
+    if [ -f "$NGINX_ENABLED/$old_config" ]; then
+        rm "$NGINX_ENABLED/$old_config"
+        echo "   Removed old $NGINX_ENABLED/$old_config"
+    fi
+done
+echo "✅ Old files cleaned"
+echo ""
+
+echo "📋 Step 2: Copying config to sites-available..."
 cp -p "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" "$NGINX_AVAILABLE/$CONFIG_NAME"
 echo "✅ Config copied to $NGINX_AVAILABLE/$CONFIG_NAME"
 echo ""
 
-echo "📋 Step 2: Copying config to sites-enabled..."
+echo "📋 Step 3: Copying config to sites-enabled..."
 cp -p "$REPO_DIR/nginx/sites-available/$CONFIG_NAME" "$NGINX_ENABLED/$CONFIG_NAME"
 echo "✅ Config copied to $NGINX_ENABLED/$CONFIG_NAME"
 echo ""
 
-echo "🔍 Step 3: Testing nginx configuration..."
+echo "🔍 Step 4: Testing nginx configuration..."
 if ! nginx -t 2>&1 | grep -q "successful"; then
     echo "❌ Nginx configuration test failed!"
+    echo ""
+    echo "Running detailed test:"
+    nginx -t
     exit 1
 fi
 echo "✅ Configuration test passed"
 echo ""
 
-echo "🔄 Step 4: Reloading nginx..."
+echo "🔄 Step 5: Reloading nginx..."
 systemctl reload nginx
 echo "✅ Nginx reloaded successfully"
 echo ""
@@ -62,4 +76,5 @@ echo "    - $NGINX_ENABLED/$CONFIG_NAME"
 echo ""
 echo "Files are copies (not symlinks) for reliability and simplicity."
 echo ""
+
 
