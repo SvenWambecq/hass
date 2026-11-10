@@ -46,6 +46,21 @@ The basic idea is as follows:
 5. To configure port 443, select the Port Mapping tab on the modem web-page (192.168.1.1) and add a mapping for https. Assign a fixed IP address for the target host. This can be done under `My Modem -> DHCP` and add the static address to the list.
 6. If there are problems to connect the inverter to Wifi, check the attached pdf. 
 
+##### Deploying nginx configuration changes
+
+After pulling changes from git, deploy the updated nginx configuration:
+
+```bash
+cd /path/to/git/repo
+sudo ./deploy.sh
+```
+
+This script will:
+1. Copy the nginx config to `/etc/nginx/sites-available/`
+2. Create a symlink in `/etc/nginx/sites-enabled/`
+3. Test the configuration
+4. Reload nginx with zero downtime
+
 ##### Renew certificate
 
 1. To check until when it is valid: 
